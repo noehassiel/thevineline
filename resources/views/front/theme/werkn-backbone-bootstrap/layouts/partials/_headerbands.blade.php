@@ -1,25 +1,46 @@
 @php
-  $headerbands = Nowyouwerkn\WeCommerce\Models\Headerband::where('is_active', true)->orderBy('priority', 'asc')->get();
+    $headerbands = Nowyouwerkn\WeCommerce\Models\Headerband::where('is_active', true)
+        ->orderBy('priority', 'asc')
+        ->get();
 @endphp
 
-@if(!empty($headerbands))
-	@foreach($headerbands as $hb)
-	<style type="text/css">
-		.wk-headerband-{{ Str::slug($hb->title) }}{
-			background-color: {{ $hb->hex_background  }} !important;
-			color: {{ $hb->hex_text  }} !important;
-		}	
-	</style>
+@if (!empty($headerbands))
+    @foreach ($headerbands as $hb)
+        <style type="text/css">
+            .wk-headerband-{{ Str::slug($hb->title) }} {
+                background-color: {{ $hb->hex_background }} !important;
+                color: {{ $hb->hex_text }} !important;
+            }
+        </style>
 
-	<div class="wk-headerband wk-headerband-{{ Str::slug($hb->title) }}">
-		<div class="container">
-			<div class="row">
-				<div class=" d-flex align-items-center justify-content-center">
-					<h6 class="mb-0 me-3">{{ $hb->title }}</h6>
-					{!! $hb->text  !!}
-				</div>
-			</div>
-		</div>
-	</div>
-	@endforeach
+        <div class="wk-headerband wk-headerband-{{ Str::slug($hb->title) }} wrapper ">
+            <div class="boxes">
+                <div class="box">{{ $hb->title }}</div>
+                <div class="box">-</div>
+                <div class="box"></div>
+                <div class="box">{!! $hb->text !!}</div>
+                <div class="box">{{ $hb->title }}</div>
+                <div class="box">-</div>
+                <div class="box"></div>
+                <div class="box">{!! $hb->text !!}</div>
+                <div class="box">{{ $hb->title }}</div>
+                <div class="box">-</div>
+                <div class="box"></div>
+                <div class="box">{!! $hb->text !!}</div>
+                <div class="box">{{ $hb->title }}</div>
+                <div class="box">-</div>
+                <div class="box"></div>
+                <div class="box">{!! $hb->text !!}</div>
+                <div class="box">{{ $hb->title }}</div>
+                <div class="box">-</div>
+                <div class="box"></div>
+                <div class="box">{!! $hb->text !!}</div>
+                <div class="box">{{ $hb->title }}</div>
+                <div class="box">-</div>
+                <div class="box"></div>
+                <div class="box">{!! $hb->text !!}</div>
+            </div>
+
+        </div>
+    @endforeach
 @endif

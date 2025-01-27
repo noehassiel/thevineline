@@ -145,6 +145,18 @@
         </div>
     </section>
 
+    <section class="vine-section">
+        <div class="section-body">
+            <div class="mission vine-container">
+                <div class="vine-container-bg">
+                </div>
+                <div class="vine-container-content">
+                    <h1>he</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PROMO BANNER -->
     @php
         $banner_promo = Nowyouwerkn\WeCommerce\Models\Banner::where('is_promotional', true)
@@ -153,7 +165,6 @@
     @endphp
 
     <section class="vine-section promo-banner">
-
         <div class="section-body">
             <div class="vine-container">
                 <div class="vine-container-bg">
@@ -194,6 +205,8 @@
             </div>
         </div>
     </section>
+
+
 
 
     <section class="banner-main" style="background:#f9f8f5;">
@@ -288,6 +301,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- best-selling-area-end -->
 @endsection

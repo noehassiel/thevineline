@@ -500,3 +500,27 @@ nav {
     width: 100%;
     object-fit: cover;
 }
+
+/*MARQUEE*/
+
+.wrapper {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    height: 36px;
+    padding: 0;
+}
+
+.box {
+    position: absolute;
+    background: transparent;
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+.boxes {
+    position: relative;
+}
