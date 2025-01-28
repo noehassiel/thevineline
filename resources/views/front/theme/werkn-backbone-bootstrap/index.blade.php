@@ -189,18 +189,18 @@
             ->first();
     @endphp
 
-    <section class="vine-section promo-banner">
-        <div class="section-body">
-            <div class="vine-container">
-                <div class="vine-container-bg">
-                    @if ($banner_promo->image == null)
-                        <img src="{{ asset('img/banners/' . $banner_promo->image_desktop) }}" alt="">
-                    @else
-                        <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="">
-                    @endif
-                </div>
-                <div class="vine-container-content"></div>
-                @if (!empty($banner_promo))
+    @if (!empty($banner_promo))
+        <section class="vine-section promo-banner">
+            <div class="section-body">
+                <div class="vine-container">
+                    <div class="vine-container-bg">
+                        @if ($banner_promo->image == null)
+                            <img src="{{ asset('img/banners/' . $banner_promo->image_desktop) }}" alt="">
+                        @else
+                            <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="">
+                        @endif
+                    </div>
+                    <div class="vine-container-content"></div>
                     <div class="banner-wrap" style="position: relative;">
                         <div class="container">
                             <div class="row">
@@ -226,10 +226,10 @@
                             </div>
                         </div>
                     </div>
-                @endif
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
 
 
