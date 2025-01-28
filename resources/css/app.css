@@ -133,13 +133,21 @@ nav {
 }
 
 .editions .division-line {
-    position: absolute;
-    height: 100%;
-    width: 1px;
-    background-color: #ffffff7e;
-    top: 0;
-    right: calc(160px + 20px* 2);
-    z-index: 99;
+    display: none;
+}
+
+@media screen and (min-width: 900.02px) {
+    .editions .division-line {
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        background-color: #ffffff7e;
+        top: 0;
+        right: calc(160px + 20px* 2);
+        z-index: 99;
+    }
+
 }
 
 .editions .vine-section {
