@@ -102,7 +102,7 @@
                         <h2>Now</h2>
                     </div>
 
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between flex-products">
                         @foreach ($products_favorites->take(4) as $product_info)
                             @include('front.theme.werkn-backbone-bootstrap.layouts.utilities._product_card')
                         @endforeach
@@ -145,13 +145,38 @@
         </div>
     </section>
 
-    <section class="vine-section">
+    <section class="vine-section min-catalog">
         <div class="section-body">
-            <div class="mission vine-container">
+            <div class="vine-container">
                 <div class="vine-container-bg">
                 </div>
                 <div class="vine-container-content">
-                    <h1>he</h1>
+                    <div class="d-flex justify-content-between align-items-center mb-4 min-heading">
+                        <h1 class="mb-0">Catalog</h1>
+
+                        <div class="btn btn-primary">
+                            Go shop
+                        </div>
+                    </div>
+
+                    <div class="products-grid">
+                        @foreach ($products->take(6) as $index => $product_info)
+                            @if ($index === 3)
+                                <div class="product-wow">
+
+                                    <img src="{{ asset('themes/thevineline/img/warm.webp') }}" class="img-fluid"
+                                        alt="">
+
+                                    @include('front.theme.werkn-backbone-bootstrap.layouts.utilities._product_card')
+                                </div>
+                            @else
+                                <div class="product">
+                                    @include('front.theme.werkn-backbone-bootstrap.layouts.utilities._product_card')
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -282,22 +307,6 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-        </div>
-    </section>
-
-    <section class="pt-5 pb-5">
-        <div class="container custom-container-two">
-            <div class="row">
-                <div class="col-xl-12 col-lg-12">
-                    <div class="row new-arrival-active">
-                        @foreach ($products->take(4) as $product_info)
-                            <div class="col-md-3">
-                                @include('front.theme.werkn-backbone-bootstrap.layouts.utilities._product_card')
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
             </div>
         </div>
     </section>
