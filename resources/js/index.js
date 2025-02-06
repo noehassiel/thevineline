@@ -109,7 +109,7 @@ ScrollTrigger.matchMedia({
         });
 
     }
-});
+}); 
 
 
 // Marquee component

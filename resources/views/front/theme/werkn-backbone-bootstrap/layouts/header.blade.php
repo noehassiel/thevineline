@@ -36,7 +36,7 @@
         </div>
 
         <div class="nav-sec">
-            <li class="list-inline-item">
+            <li class="">
                 <form role="search" action="{{ route('search.query') }}" class="catalog-search ">
                     <div class="input-group input-group-search d-flex align-items-center">
                         <div class="input-group-prepend">
@@ -51,8 +51,9 @@
             </li>
 
             @guest
-                <li class="list-inline-item"><a href="{{ route('login') }}" class="btn btn-link px-1"><ion-icon
-                            name="person"></ion-icon></a></li>
+                <li class="">
+                    <a href="{{ route('login') }}" class="btn btn-link px-1"><ion-icon name="person"></ion-icon></a>
+                </li>
                 <li class="list-inline-item">
                     <a href="{{ route('login') }}" class="btn btn-link px-1">
                         <ion-icon name="heart"></ion-icon>
