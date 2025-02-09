@@ -278,35 +278,75 @@
         @endif
     </section>
 
+    @if (Session::has('watch_history'))
+        <section class="vine-section watch-history">
+            <div class="section-body">
+                <div class="vine-container">
+                    <div class="vine-container-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    @php
+                                        $oldRecommend = Session::get('watch_history');
+                                        $recommendations = new Nowyouwerkn\WeCommerce\Models\WatchHistory(
+                                            $oldRecommend,
+                                        );
 
-    <section class="pt-5 pb-5">
-        <div class="container">
-            <div class="row">
-                @foreach ($main_categories as $category)
-                    <div class="col-md-4">
-                        <div class="cat-item mb-20">
-                            <div class="thumb">
-                                <a href="{{ route('catalog', $category->slug) }}">
-                                    @if ($category->image == null)
-                                        <img src="{{ asset('img/categories/no_category.jpg') }}" alt=""
-                                            width="100%">
-                                    @else
-                                        <img src="{{ asset('img/categories/' . $category->image) }}" alt=""
-                                            width="100%">
-                                    @endif
-                                </a>
-                            </div>
-                            <div class="content mt-3">
-                                <span>Colección</span>
-                                <h3 class="mb-3 mt-0"><a
-                                        href="{{ route('catalog', $category->slug) }}">{{ $category->name }}</a></h3>
-                                <a href="{{ route('catalog', $category->slug) }}"
-                                    class="btn btn-outline-secondary">Comprar
-                                    Ahora</a>
+                                        foreach ($recommendations->items as $r) {
+                                            $categories = $r['category'];
+                                        }
+
+                                        $recommeded_products = Nowyouwerkn\WeCommerce\Models\Product::whereIn(
+                                            'category_id',
+                                            [$categories],
+                                        )
+                                            ->take(4)
+                                            ->inRandomOrder()
+                                            ->get();
+                                    @endphp
+
+                                    @foreach ($recommeded_products as $rec_products)
+                                        <div class="col-md-3">
+                                            <a class="small-product-card"
+                                                href="{{ route('detail', [$rec_products->category->slug, $rec_products->slug]) }}">
+                                                <img alt="{{ $rec_products->name }}" style="width: 100px;"
+                                                    src="{{ asset('img/products/' . $rec_products->image) }}">
+
+                                                <div class="small-product-card-info">
+                                                    <h5 class="fs-6 mb-1">{{ $rec_products->name }}</h5>
+                                                    @if ($rec_products->has_discount == true && $rec_products->discount_end > Carbon\Carbon::today())
+                                                        <div class="wk-price" style="font-size:.8em;">
+                                                            ${{ number_format($rec_products->discount_price, 2) }}</div>
+                                                        <div class="wk-price wk-price-discounted"
+                                                            style="font-size:.7em !important; ">
+                                                            ${{ number_format($rec_products->price, 2) }}</div>
+                                                    @else
+                                                        <div class="wk-price" style="font-size:.8em;">
+                                                            ${{ number_format($rec_products->price, 2) }}</div>
+                                                    @endif
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
-                @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+
+    <!--COOL CTA-->
+    <section class="vine-section">
+        <div class="section-body">
+            <div class="vine-container">
+                <div class="vine-container-bg">
+                </div>
+                <div class="vine-container-content">
+                    <h1>Hello</h1>
+                </div>
             </div>
         </div>
     </section>

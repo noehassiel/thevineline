@@ -21,64 +21,59 @@
                 @endif
             </a>
 
-            <div class="separator"></div>
-            <li class="list-inline-item btn btn-link"><a href="{{ route('index') }}">Inicio</a></li>
+
+
+            <a class="nav-link" href="{{ route('index') }}">Inicio</a>
+
 
             @foreach ($categories as $category)
-                <li class="list-group-item"><a href="{{ route('catalog', $category->slug) }}">{{ $category->name }}</a>
-                </li>
+                <a class="nav-link" href="{{ route('catalog', $category->slug) }}">{{ $category->name }}</a>
             @endforeach
-            </ul>
-
-            <li class="list-inline-item btn btn-link"><a href="{{ route('catalog.promo') }}">Promociones</a>
-            </li>
-
         </div>
 
         <div class="nav-sec">
-            <li class="">
+            <div class="py-3 px-2">
                 <form role="search" action="{{ route('search.query') }}" class="catalog-search ">
                     <div class="input-group input-group-search d-flex align-items-center">
+                        <input type="search" class="form-control" name="query" placeholder="Encuentra tu favorito"
+                            aria-describedby="button-search">
                         <div class="input-group-prepend">
                             <button type="submit" class="btn" type="button" id="button-search">
                                 <ion-icon name="search-outline"></ion-icon>
                             </button>
                         </div>
-                        <input type="search" class="form-control" name="query" placeholder="Encuentra tu favorito"
-                            aria-describedby="button-search" style="width: 190px">
                     </div>
                 </form>
-            </li>
+            </div>
+
+            <hr style="margin: 0; background-color: #f0f0f0;">
 
             @guest
-                <li class="">
-                    <a href="{{ route('login') }}" class="btn btn-link px-1"><ion-icon name="person"></ion-icon></a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="{{ route('login') }}" class="btn btn-link px-1">
-                        <ion-icon name="heart"></ion-icon>
-                        <span class="badge bg-info">0</span>
-                    </a>
-                </li>
+                <a class="nav-link justify-content-between d-flex align-items-center" href="{{ route('login') }}">
+                    Cuenta
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
             @else
-                <li class="list-inline-item"><a href="{{ route('profile') }}" class="btn btn-link px-1"><ion-icon
-                            name="person"></ion-icon></a></li>
-                <li class="list-inline-item">
-                    <a href="{{ route('wishlist') }}" class="btn btn-link px-1">
-                        <ion-icon name="heart"></ion-icon>
-                        <span class="badge bg-info">{{ Auth::user()->wishlists->count() ?? '0' }}</span>
-                    </a>
-                </li>
+                <a class="nav-link justify-content-between d-flex align-items-center" href="{{ route('profile') }}">
+                    Perfil
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
             @endguest
 
             @if (request()->is('checkout'))
             @else
-                <div class="dropdown" style="display: inline-flex;">
-                    <a class="btn btn-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <ion-icon name="bag"></ion-icon>
+                <div class="dropdown nav-link">
+                    <a class="justify-content-between d-flex align-items-center
+justify-content-between d-flex align-items-center"
+                        href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Bolsa
+
+                        <ion-icon name="bag-outline"></ion-icon>
+                        {{--
                         <span
                             class="badge bg-danger">{{ Session::has('cart') ? Session::get('cart')->totalQty : '0' }}</span>
+                             --}}
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"

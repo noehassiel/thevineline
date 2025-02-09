@@ -37,6 +37,11 @@ nav {
     }
 }
 
+nav .nav-link {
+    width: 100%;
+
+}
+
 .nav-main {
     background-color: white;
     border-radius: 6px;
@@ -49,7 +54,7 @@ nav {
 
 @media (min-width: 900.02px) {
     .nav-sec {
-        background-color: rgb(23, 23, 23);
+        background-color: #313131;
         border-radius: 6px;
         width: 100%;
         display: flex;
@@ -547,6 +552,13 @@ nav {
 
 .boxes {
     position: relative;
+}
+
+
+/*WATCH HISTORY*/
+.watch-history {
+    background-color: #222;
+    color: #E7E5E5;
 }
 
 

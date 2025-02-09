@@ -43,61 +43,6 @@
         @yield('content')
     </main>
 
-
-    @if (Session::has('watch_history'))
-        <div class="container mt-5 mb-4">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3 class="mb-2">Podrían gustarte...</h3>
-                    <p class="pe-5">Recomendaciones basadas en los productos que has visitado</p>
-                </div>
-                <div class="col-md-12">
-                    <div class="row">
-                        @php
-                            $oldRecommend = Session::get('watch_history');
-                            $recommendations = new Nowyouwerkn\WeCommerce\Models\WatchHistory($oldRecommend);
-
-                            foreach ($recommendations->items as $r) {
-                                $categories = $r['category'];
-                            }
-
-                            $recommeded_products = Nowyouwerkn\WeCommerce\Models\Product::whereIn('category_id', [
-                                $categories,
-                            ])
-                                ->take(4)
-                                ->inRandomOrder()
-                                ->get();
-                        @endphp
-
-                        @foreach ($recommeded_products as $rec_products)
-                            <div class="col-6 col-md-3">
-                                <a class="small-product-card"
-                                    href="{{ route('detail', [$rec_products->category->slug, $rec_products->slug]) }}">
-                                    <img alt="{{ $rec_products->name }}" style="width: 100px;"
-                                        src="{{ asset('img/products/' . $rec_products->image) }}">
-
-                                    <div class="small-product-card-info">
-                                        <h5 class="fs-6 mb-1">{{ $rec_products->name }}</h5>
-                                        @if ($rec_products->has_discount == true && $rec_products->discount_end > Carbon\Carbon::today())
-                                            <div class="wk-price" style="font-size:.8em;">
-                                                ${{ number_format($rec_products->discount_price, 2) }}</div>
-                                            <div class="wk-price wk-price-discounted"
-                                                style="font-size:.7em !important; ">
-                                                ${{ number_format($rec_products->price, 2) }}</div>
-                                        @else
-                                            <div class="wk-price" style="font-size:.8em;">
-                                                ${{ number_format($rec_products->price, 2) }}</div>
-                                        @endif
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
-
     @include('front.theme.werkn-backbone-bootstrap.layouts.footer')
 
     @include('front.theme.werkn-backbone-bootstrap.layouts.partials._cookies_notice')
