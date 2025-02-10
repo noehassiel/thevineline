@@ -584,7 +584,7 @@ nav .nav-link {
         position: absolute;
         inline-size: 160px;
         inset-inline-end: 20px;
-        inset-block-end: 50px;
+        inset-block-start: 50px;
         z-index: 8;
         flex-direction: column;
     }
