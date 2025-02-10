@@ -561,6 +561,35 @@ nav .nav-link {
     color: #E7E5E5;
 }
 
+/*CATALOG PAGE*/
+.catalog-page {
+    background-color: #222;
+    color: #E7E5E5;
+}
+
+.catalog-page .vine-container-content {
+    min-height: 100vh;
+}
+
+.filters {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+@media (min-width: 900.02px) {
+    .sidebar-filter {
+        position: absolute;
+        inline-size: 160px;
+        inset-inline-end: 20px;
+        inset-block-end: 50px;
+        z-index: 8;
+        flex-direction: column;
+    }
+}
+
 
 /*PRODCTUS CATALOG*/
 .products-grid {
