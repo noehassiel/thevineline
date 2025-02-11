@@ -17,8 +17,9 @@
                 <div class="vine-container-bg">
                 </div>
                 <div class="vine-container-content">
-                    <div class="container">
-                        @if ($products->count() == 0)
+                    @if ($products->count() == 0)
+                        <div class="container">
+
                             <div class="text-center" style="padding:80px 0px 100px 0px;">
                                 <img src="{{ asset('themes/werkn-backbone/img/not_found.svg') }}" class="ml-auto mr-auto mb-5"
                                     width="300">
@@ -26,42 +27,22 @@
                                 <p class="mb-4">Regresa pronto para conocer nuestros productos. ¿Eres el dueño? Inicia
                                     sesión <a href="{{ route('login') }}">aquí.</a></p>
                             </div>
-                        @else
-                            <div class="row">
-                                <div class="col-xl-9 col-lg-8 pl-4">
-                                    <div class="shop-top-meta mb-35">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="shop-top-left">
-                                                    <ul>
-                                                        <!--<li><a href="#"><i class="flaticon-menu"></i> FILTER</a></li>-->
-                                                        <!--<li>Mostrando 1–9 de 80 resultados</li>-->
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="shop-top-right">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        @foreach ($products as $product_info)
-                                            <div class="col-xl-4 col-sm-6">
-                                                @include('front.theme.werkn-backbone-bootstrap.layouts.utilities._product_card')
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                    <div class="pagination-wrap">
-                                        {{ $products->appends(request()->query())->links() }}
-                                    </div>
+                        </div>
+                    @else
+                        <div class="products-grid">
+                            @foreach ($products as $product_info)
+                                <div class="product">
+                                    @include('front.theme.werkn-backbone-bootstrap.layouts.utilities._product_card')
                                 </div>
-
-                            </div>
-                        @endif
-                    </div>
+                            @endforeach
+                        </div>
+                        <div class="pagination-wrap">
+                            {{ $products->appends(request()->query())->links() }}
+                        </div>
+                    @endif
                 </div>
             </div>
+        </div>
         </div>
     </section>
 @endsection

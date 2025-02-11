@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BlurScrollEffect as BlurScrollEffect2 } from './blurScrollEffect.js';
 
 
+
 // Initializes smooth scrolling with Lenis and integrates it with GSAP's ScrollTrigger.
 // Function to set up smooth scrolling.
 const initSmoothScrolling = () => {
@@ -84,34 +85,35 @@ gsap.fromTo('.card-right',
 );
 
 
-ScrollTrigger.matchMedia({
+if (document.querySelector('.fav-products')) {
 
-    "(min-width: 900.02px)": function () {
-        // setup animations and ScrollTriggers for screens 960px wide or greater...
-        // These ScrollTriggers will be reverted/killed when the media query doesn't match anymore.
+    ScrollTrigger.matchMedia({
 
-
-        const productCards = document.querySelectorAll('.product-card');
-
-        // Apply staggered animation
-        gsap.from(productCards, {
-            y: 120, // Start position (50px below the current position)
-            duration: 1, // Animation duration
-            stagger: 0.2, // Delay between each card's animation
-            ease: 'power2.out', // Animation easing
-            scrollTrigger: {
-                trigger: '.fav-products', // Trigger animation when this section enters the viewport
-                start: 'top 80%', // Start when top of section is 80% down the viewport
-                end: 'bottom 20%', // End when bottom of section reaches 20% of viewport
-                scrub: true, // Smooth animation as user scrolls
-                markers: false, // Show position markers on the timeline
-            },
-        });
-
-    }
-}); 
+        "(min-width: 900.02px)": function () {
+            // setup animations and ScrollTriggers for screens 960px wide or greater...
+            // These ScrollTriggers will be reverted/killed when the media query doesn't match anymore.
 
 
+            const productCards = document.querySelectorAll('.product-card');
+
+            // Apply staggered animation
+            gsap.from(productCards, {
+                y: 120, // Start position (50px below the current position)
+                duration: 1, // Animation duration
+                stagger: 0.2, // Delay between each card's animation
+                ease: 'power2.out', // Animation easing
+                scrollTrigger: {
+                    trigger: '.fav-products', // Trigger animation when this section enters the viewport
+                    start: 'top 80%', // Start when top of section is 80% down the viewport
+                    end: 'bottom 20%', // End when bottom of section reaches 20% of viewport
+                    scrub: true, // Smooth animation as user scrolls
+                    markers: false, // Show position markers on the timeline
+                },
+            });
+
+        }
+    });
+}
 // Marquee component
 initMarquee(190, 27)
 
