@@ -3,9 +3,45 @@ import 'lenis/dist/lenis.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BlurScrollEffect as BlurScrollEffect2 } from './blurScrollEffect.js';
+import barba from '@barba/core';
 
 
+if (window.location.pathname === '/' || window.location.pathname === '/') {
+    let textWrapper = document.querySelector('.title-1')
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    let tl = gsap.timeline();
 
+    tl.fromTo('.brand-name', {
+        opacity: 0,
+        y: '-100'
+    }, {
+        opacity: 1,
+        y: '0',
+        duration: .7,
+        ease: "back.out(1.7)",
+    })
+
+    tl.to('.title-1 .letter', { opacity: 1, y: '0', clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', stagger: '.02' }, "-=.5")
+
+    tl.fromTo('.hero-btn', {
+        opacity: 0,
+        y: '-100'
+    }, {
+        opacity: 1,
+        y: '0',
+        duration: .7,
+        ease: "back.out(1.7)",
+    }, "-=.5")
+
+    tl.fromTo('.hero-subtitle', {
+        opacity: 0,
+        y: '100'
+    }, {
+        opacity: 1,
+        y: '0',
+        duration: .4,
+    })
+}
 // Initializes smooth scrolling with Lenis and integrates it with GSAP's ScrollTrigger.
 // Function to set up smooth scrolling.
 const initSmoothScrolling = () => {
@@ -145,3 +181,19 @@ function initMarquee(boxWidth, time) {
     });
 
 }
+
+barba.init({
+    transitions: [{
+        name: 'opacity-transition',
+        leave(data) {
+            return gsap.to(data.current.container, {
+                opacity: 0
+            });
+        },
+        enter(data) {
+            return gsap.from(data.next.container, {
+                opacity: 0
+            });
+        }
+    }],
+});

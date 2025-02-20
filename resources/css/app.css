@@ -5,9 +5,47 @@
     --col: calc((100vw -(var(--outsideGutters)* 2) -(var(--gutters)*(var(--columns) - 1))));
 }
 
+@font-face {
+    font-family: 'uqr';
+    src: url('../fonts/u-q_r.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pqf';
+    src: url('../fonts/p-q_f.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nhm';
+    src: url('../fonts/n-h_m.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nhr';
+    src: url('../fonts/n-h_r.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: #EBEBEB;
     color: #010101;
+}
+
+button,
+a,
+p {
+    font-family: 'nhr';
+}
+
+span {
+    font-family: 'pqf';
 }
 
 /*NAVBAR*/
@@ -70,6 +108,7 @@ nav .nav-link {
 
 /*SECTIONS BASE*/
 .vine-section {
+    font-family: 'uqr';
     display: block;
     inline-size: 100%;
     margin-inline: auto;
@@ -138,10 +177,86 @@ nav .nav-link {
     height: 100dvh;
 }
 
+.hero .letter {
+    display: inline-block;
+    line-height: 1em;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transform: translateY(-50px);
+}
+
+.hero .title-1 span {
+    font-family: 'uqr';
+}
+
+.hero .title-1 span:first-child {
+    font-family: 'pqf' !important;
+}
+
+.hero .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #0101014a;
+    position: absolute;
+    z-index: 0;
+}
+
+.hero .vine-container-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    color: #e3e3e3;
+    padding: 4rem 12px;
+}
+
+.hero h3 {
+    font-size: 1.6rem;
+}
+
+.hero h1 {
+    font-size: 3.1rem;
+    letter-spacing: -2px;
+    padding: 0 20px;
+}
+
+.hero h2 {
+    font-size: 1.6rem;
+}
+
+
+@media screen and (min-width: 900.02px) {
+    .hero h3 {
+        font-size: 1.6rem;
+    }
+
+    .hero h1 {
+        font-size: 6.4rem;
+        letter-spacing: -4px;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+}
+
 /*EDITIONS*/
+.title-editions {
+    background-color: #E0E0E0;
+}
+
+.title-editions .vine-container-content {
+    padding: 5rem 10px;
+}
+
+.title-editions h2 {
+    font-size: 4rem;
+    line-height: 1;
+}
+
 .editions {
-    height: 400vh;
     position: relative;
+    display: none;
 }
 
 .editions .division-line {
@@ -149,6 +264,21 @@ nav .nav-link {
 }
 
 @media screen and (min-width: 900.02px) {
+    .editions {
+        display: block;
+        height: 400vh;
+    }
+
+    .editions-mobile {
+        display: none;
+    }
+
+    .sticky-element {
+        position: sticky;
+        top: 0;
+    }
+
+
     .editions .division-line {
         display: block;
         position: absolute;
@@ -180,6 +310,11 @@ nav .nav-link {
     overflow: hidden;
 }
 
+.editions-mobile .card-mobile {
+    height: 580px;
+    overflow: hidden;
+}
+
 .editions .card-half {
     flex-direction: column;
     flex: 1;
@@ -187,14 +322,16 @@ nav .nav-link {
     height: 200%;
 }
 
-.editions .card-slide {
+.editions .card-slide,
+.editions-mobile .card-mobile .card-slide {
     width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
 }
 
-.editions .card-slide .slide-content {
+.editions .card-slide .slide-content,
+.editions-mobile .card-mobile .card-slide .slide-content {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
@@ -204,20 +341,23 @@ nav .nav-link {
     position: relative;
 }
 
-.editions .card-slide .slide-content .slide-bg {
+.editions .card-slide .slide-content .slide-bg,
+.editions-mobile .card-mobile .card-slide .slide-content .slide-bg {
     z-index: -1;
     position: absolute;
     inset: 0%;
 }
 
-.editions .card-slide .slide-content .slide-bg .overlay {
+.editions .card-slide .slide-content .slide-bg .overlay,
+.editions-mobile .card-mobile .card-slide .slide-content .slide-bg .overlay {
     z-index: 1;
     background-color: #02020266;
     position: absolute;
     inset: 0%;
 }
 
-.editions .card-slide .slide-content .slide-bg video {
+.editions .card-slide .slide-content .slide-bg video,
+.editions-mobile .card-mobile .card-slide .slide-content .slide-bg video {
     aspect-ratio: auto;
     object-fit: cover;
     width: 100%;
@@ -318,12 +458,12 @@ nav .nav-link {
     max-width: 1000px;
     min-width: 300px;
     line-height: 1.2;
-    font-family: "instrument-sans-variable", sans-serif;
+    font-family: "nhr", sans-serif;
     font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
 .blur-text--2 {
-    font-family: "iki-mono-variable", sans-serif;
+    font-family: "nhr", sans-serif;
     font-variation-settings: "wdth" 80, "wght" 300;
 }
 
@@ -580,9 +720,8 @@ nav .nav-link {
 
 .filters {
     position: fixed;
-    top: 0;
-    left: 0;
     right: 0;
+    bottom: 0;
     z-index: 990;
 }
 
@@ -595,9 +734,9 @@ nav .nav-link {
 @media (min-width: 900.02px) {
     .sidebar-filter {
         position: absolute;
-        inline-size: 160px;
-        inset-inline-end: 20px;
-        inset-block-end: 50px;
+        width: 160px;
+        right: 20px;
+        bottom: 50px;
         z-index: 8;
         flex-direction: column;
     }

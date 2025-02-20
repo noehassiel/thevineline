@@ -29,21 +29,21 @@
     @stack('stylesheets')
 </head>
 
-<body>
+<body data-barba="wrapper">
     @if (Auth::check())
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._werkn_bar')
     @endif
-
-    @include('front.theme.werkn-backbone-bootstrap.layouts.partials._headerbands')
     @include('front.theme.werkn-backbone-bootstrap.layouts.header')
 
-    <main class="mb-5">
+    <main class="mb-5" data-barba="container" data-barba-namespace="home">
+        @include('front.theme.werkn-backbone-bootstrap.layouts.partials._headerbands')
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._messages')
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._modal_messages')
         @yield('content')
     </main>
 
 
+    {{--
     @if (Session::has('watch_history'))
         <div class="container mt-5 mb-4">
             <div class="row">
@@ -97,6 +97,7 @@
             </div>
         </div>
     @endif
+     --}}
 
     @include('front.theme.werkn-backbone-bootstrap.layouts.footer')
 

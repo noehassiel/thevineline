@@ -4,30 +4,85 @@
 @endpush
 
 @push('stylesheets')
-    <style>
-        .sticky-element {
-            position: sticky;
-            top: 0;
-        }
-    </style>
 @endpush
 
 @section('content')
 
 
 
+    @php
+        $banner_main = Nowyouwerkn\WeCommerce\Models\Banner::where('is_promotional', false)
+            ->where('priority', 1)
+            ->first();
+    @endphp
+
     <section class="vine-section">
         <div class="section-body">
             <div class="hero vine-container">
-                <div class="vine-container-bg">
-                    <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="">
-                </div>
-                <div class="vine-container-content">
-                    <h1>hi</h1>
-                </div>
+
+                @if (empty($banner_main))
+                    <div class="vine-container-bg">
+                        <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="vine-container-content text-center">
+
+                        <div></div>
+
+                        <div class="col-12">
+                            <h3 class="brand-name">The <span>V</span>ineline</h3>
+                            <h1 class="title-1"><span>S</span>ee the world, not your screen.</h1>
+
+                            <a class="hero-btn" href="{{ route('catalog.all') }}" class="btn btn-primary">Comprar</a>
+                        </div>
+
+
+                        <div class="col-md-8">
+                            <h2 class="hero-subtitle">Ai Pin is your intelligent, voice-powered wearable companion — keeping
+                                you
+                                connected and in
+                                the
+                                moment with just a touch.
+                            </h2>
+                        </div>
+                    </div>
+                @else
+                    <div class="vine-container-bg">
+                        <img src="{{ asset('img/banners/' . $banner_main->image) }}" alt="">
+                        <div class="overlay"></div>
+                    </div>
+
+                    <div class="vine-container-content text-center">
+                        <div></div>
+
+                        <div class="col-12">
+                            <h3 class="brand-name">The Vineline</h3>
+                            <h1 class="title-1">{{ $banner_main->title }}</h1>
+
+                            <a class="hero-btn" href="{{ $banner_main->link }}"
+                                class="btn btn-primary">{{ $banner_main->text_button }}</a>
+                        </div>
+
+
+                        <div class="col-md-8">
+                            <h2 class="hero-subtitle">{{ $banner_main->subtitle }}
+                            </h2>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </section>
+
+    <div class="vine-section title-editions">
+        <div class="section-body">
+            <div class="vine-container">
+                <div class="vine-container-content">
+                    <h2><span>E</span>xpression <br> on your own terms</h2>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="editions">
         <div class="division-line"></div>
@@ -90,6 +145,42 @@
         </div>
     </section>
 
+    <div class="editions-mobile">
+        <div class="container-fluid px-0">
+
+            <div class="row">
+                <div class="col-md-12 px-0">
+                    <div class="card-mobile">
+                        <div class="card-slide">
+                            <div class="slide-content">
+                                <div class="slide-bg">
+                                    <div class="overlay"></div>
+                                    <video src="{{ asset('themes/thevineline/img/boy-1.webm') }}" autoplay muted loop
+                                        playsinline></video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 px-0">
+                    <div class="card-mobile">
+                        <div class="card-slide">
+                            <div class="slide-content">
+                                <div class="slide-bg">
+                                    <div class="overlay"></div>
+                                    <video src="{{ asset('themes/thevineline/img/girl-2.webm') }}" autoplay muted loop
+                                        playsinline></video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <!-- best-selling-area -->
     <section class="vine-section fav-products">
         <div class="section-body">
@@ -97,9 +188,9 @@
                 <div class="vine-container-content">
 
                     <div class="d-flex justify-content-between align-items-center fav-heading">
-                        <h2>Shop</h2>
+                        <h2><span>S</span>hop</h2>
                         <a href="{{ route('catalog.all') }}" class="btn btn-primary">Comprar ahora</a>
-                        <h2>Now</h2>
+                        <h2><span>N</span>ow</h2>
                     </div>
 
                     <div class="d-flex justify-content-between flex-products">
@@ -152,7 +243,7 @@
                 </div>
                 <div class="vine-container-content">
                     <div class="d-flex justify-content-between align-items-center mb-4 min-heading">
-                        <h1 class="mb-0">Catalog</h1>
+                        <h1 class="mb-0"><span>C</span>atalog</h1>
 
                         <div class="btn btn-primary">
                             Go shop
@@ -213,7 +304,8 @@
                                         <h2 style="color: {{ $banner_promo->hex_text_subtitle }}">
                                             {{ $banner_promo->title }}
                                         </h2>
-                                        <p style="color: {{ $banner_promo->hex_text_subtitle }}">{{ $banner_promo->text }}
+                                        <p style="color: {{ $banner_promo->hex_text_subtitle }}">
+                                            {{ $banner_promo->text }}
                                         </p>
 
                                         @if ($banner_promo->has_button == true)
