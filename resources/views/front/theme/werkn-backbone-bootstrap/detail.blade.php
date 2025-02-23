@@ -40,9 +40,6 @@
     <style>
         .swiper {
             width: 100%;
-            height: 300px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .swiper-slide {
@@ -54,16 +51,10 @@
             width: 100%;
         }
 
-        .mySwiper {
-            height: 20%;
-            box-sizing: border-box;
-            padding: 10px 0;
-        }
-
         .mySwiper .swiper-slide {
-            width: 25%;
-            height: 100%;
-            opacity: 0.4;
+            width: 40px;
+            height: 40px;
+            opacity: 0.5;
         }
 
         .mySwiper .swiper-slide-thumb-active {
@@ -90,41 +81,19 @@
                 <div class="col-md-2 ">
                     hello
                 </div>
-                <div class="col-md-10 pe-0">
-                    <div class="h-100">
+                <div class="col-md-10 pe-md-0 ">
+                    <div class="">
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                            class="swiper mySwiper2">
+                            class="swiper mySwiper2 imgDetail">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                    <img src="{{ asset('img/products/' . $product->image) }}" alt="{{ $product->name }}">
                                 </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                                </div>
+                                @foreach ($product->images as $image)
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset('img/products/' . $image->image) }}" />
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -132,35 +101,17 @@
                     <div thumbsSlider="" class="swiper mySwiper thumbs-min">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                <div class="thumb">
+                                    <img src="{{ asset('img/products/' . $product->image) }}" alt="{{ $product->name }}">
+                                </div>
                             </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                            </div>
+                            @foreach ($product->images as $image)
+                                <div class="swiper-slide">
+                                    <div class="thumb">
+                                        <img src="{{ asset('img/products/' . $image->image) }}" />
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -212,9 +163,8 @@
 
                             <ul class=" list-group px-4" id="myTab" role="tablist">
                                 <li class="nav-item list-group-item" role="presentation">
-                                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
-                                        aria-selected="true">
+                                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                                        type="button" role="tab" aria-controls="home" aria-selected="true">
                                         <img width="80" height="80"
                                             src="{{ asset('img/products/' . $product->image) }}" alt=""
                                             class="img-fluid">
@@ -767,11 +717,11 @@
                                                     @endguest
 
                                                     <!--
-                                                                                                                                                                                                                                                                                                                            <div class="comment-check-box">
-                                                                                                                                                                                                                                                                                                                                <input type="checkbox" id="comment-check">
-                                                                                                                                                                                                                                                                                                                                <label for="comment-check">Save my name and email in this browser for the next time I comment.</label>
-                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                            -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="comment-check-box">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <input type="checkbox" id="comment-check">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <label for="comment-check">Save my name and email in this browser for the next time I comment.</label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -->
                                                     <button type="submit" class="btn btn-primary mt-5">Publicar
                                                         Reseña</button>
                                                 </form>
@@ -913,13 +863,14 @@
         <!-- Initialize Swiper -->
         <script>
             var swiper = new Swiper(".mySwiper", {
-                spaceBetween: 10,
-                slidesPerView: 4,
+                slidesPerView: "auto",
                 freeMode: true,
+                spaceBetween: 8,
                 watchSlidesProgress: true,
             });
             var swiper2 = new Swiper(".mySwiper2", {
-                spaceBetween: 10,
+                slidesPerView: "auto",
+                grabCursor: true,
                 navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
