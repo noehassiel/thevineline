@@ -21,6 +21,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <style>
+        @font-face {
+            font-family: 'uqr';
+            src: url('../fonts/u-q_r.otf');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'pqf';
+            src: url('../fonts/p-q_f.woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'nhm';
+            src: url('../fonts/n-h_m.woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'nhr';
+            src: url('../fonts/n-h_r.woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+
     <link rel="stylesheet" href="{{ asset('css/w-custom.css') }}">
 
     <link rel="stylesheet" href="https://use.typekit.net/lnu1fpi.css">
@@ -30,6 +60,10 @@
 </head>
 
 <body>
+
+    <div class="load-container">
+        <div class="loading-screen"></div>
+    </div>
     @if (Auth::check())
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._werkn_bar')
     @endif

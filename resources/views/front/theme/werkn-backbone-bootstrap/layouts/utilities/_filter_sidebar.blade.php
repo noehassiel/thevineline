@@ -2,8 +2,11 @@
 @endpush
 
 <div class="filters">
-    <div id="sidebar" class="sidebar-filter p-2">
-        filters
+    <div class="sidebar-filter p-2">
+        <a href="javascript:void(0)" id="sidebar" class="d-flex justify-content-between align-items-center mb-0">
+            <p class="mb-0">Filtros</p>
+            <ion-icon name="toggle-outline"></ion-icon>
+        </a>
     </div>
 </div>
 
@@ -50,9 +53,6 @@
 
             <div class="filter">
                 <div class="accordion">
-                    @if (!empty($catalog))
-                        <p>{{ $catalog }}</p>
-                    @endif
                     <hr>
                 </div>
 
@@ -104,51 +104,6 @@
                                         <label class="form-check-label d-flex justify-content-between"
                                             for="{{ $variant->slug }}">
                                             {{ $variant->value }}
-                                        </label>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="width: 100%;" class="accordion-item accordion_item">
-                        <div class="accordion-header">
-                            <h4 class="accordion-button accordion_button collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#gender" aria-expanded="false" aria-controls="category">
-                                Género
-                            </h4>
-                        </div>
-
-                        <div id="gender" class="accordion-collapse collapse">
-                            <div class="accordion-body accordion_body">
-                                @foreach ($variants_genders as $product)
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox"
-                                            id="variant_{{ $product->gender }}" name="gender[]"
-                                            value="{{ $product->gender }}"
-                                            @if (isset($selected_variant)) @if (in_array($product->gender, $selected_variant))
-                                                checked="checked" @endif
-                                            @endif
-                                        >
-                                        <label for="variant_{{ $product->gender }}"
-                                            class="form-check-label d-flex align-items-center">
-                                            <span class="d-none d-md-inline-block">
-                                                @switch($product->gender)
-                                                    @case('unisex')
-                                                        Unisex
-                                                    @break
-
-                                                    @case('male')
-                                                        Hombres
-                                                    @break
-
-                                                    @case('female')
-                                                        Mujeres
-                                                    @break
-
-                                                    @default
-                                                @endswitch
-                                            </span>
                                         </label>
                                     </div>
                                 @endforeach

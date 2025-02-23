@@ -2,11 +2,18 @@
     $categories = Nowyouwerkn\WeCommerce\Models\Category::where('parent_id', 0)
         ->orWhere('parent_id', null)
         ->get(['name', 'slug', 'image']);
+
+    $main_categories = Nowyouwerkn\WeCommerce\Models\Category::where('parent_id', '0')
+        ->orWhere('parent_id', null)
+        ->orderBy('priority', 'asc')
+        ->orderBy('created_at', 'asc')
+        ->get(['name', 'slug', 'image'])
+        ->take(6);
 @endphp
 
 
 <header>
-    <nav>
+    <nav class="navdesk">
         <div class="nav-main">
             <a class="logo" href="{{ route('index') }}">
                 @if (!empty($store_config))
@@ -32,6 +39,7 @@
         </div>
 
         <div class="nav-sec">
+            {{--
             <div class="py-3 px-2">
                 <form role="search" action="{{ route('search.query') }}" class="catalog-search ">
                     <div class="input-group input-group-search d-flex align-items-center">
@@ -45,8 +53,8 @@
                     </div>
                 </form>
             </div>
-
             <hr style="margin: 0; background-color: #f0f0f0;">
+             --}}
 
             @guest
                 <a class="nav-link justify-content-between d-flex align-items-center" href="{{ route('login') }}">
@@ -63,10 +71,8 @@
             @if (request()->is('checkout'))
             @else
                 <div class="dropdown nav-link">
-                    <a class="justify-content-between d-flex align-items-center
-justify-content-between d-flex align-items-center"
-                        href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="justify-content-between d-flex align-items-center" href="#" role="button"
+                        id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Bolsa
 
                         <ion-icon name="bag-outline"></ion-icon>
@@ -90,8 +96,85 @@ justify-content-between d-flex align-items-center"
             @endif
         </div>
     </nav>
+
+    <nav class="navmov">
+        <a class="logo" href="{{ route('index') }}">
+            @if (!empty($store_config))
+                @if ($store_config->store_logo == null)
+                    <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" class="img-fluid" width="200">
+                @else
+                    <img src="{{ asset('assets/img/' . $store_config->store_logo) }}" alt="Logo" class="img-fluid"
+                        width="200">
+                @endif
+            @else
+                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" class="img-fluid" width="200">
+            @endif
+        </a>
+
+        <div class="d-flex justify-content-end align-items-center w-100 p-2" style="gap: 24px">
+            @guest
+                <a class=" text-white justify-content-between d-flex align-items-center" href="{{ route('login') }}">
+
+                    <ion-icon name="person-outline" style="width: 1.4em; height: 1.4em;"></ion-icon>
+                </a>
+            @else
+                <a class=" text-white justify-content-between d-flex align-items-center" href="{{ route('profile') }}">
+
+                    <ion-icon name="person-outline" style="width: 1.4em; height: 1.4em;"></ion-icon>
+                </a>
+            @endguest
+
+            <a class=" text-white justify-content-between d-flex align-items-center"
+                href="{{ route('cart') }}"><ion-icon name="bag-outline"
+                    style="width: 1.4em; height: 1.4em;"></ion-icon></a>
+
+            <a href="javascript:void(0)" id="showMNav"
+                class="justify-content-between d-flex align-items-center text-white">
+                <ion-icon name="menu-outline" style="width: 1.4em; height: 1.4em;"></ion-icon>
+            </a>
+        </div>
+    </nav>
 </header>
 
+
+<div class="collapse-nav">
+    <div class="d-flex w-100 justify-content-end p-2">
+        <a href="javascript:void(0)" id="byeCollapse"
+            class="justify-content-between d-flex align-items-center text-white">
+            <ion-icon name="close-outline" style="width: 2em; height: 2em;"></ion-icon>
+        </a>
+    </div>
+
+    <div class="d-flex linksMobile">
+        <a class="nav-link" href="{{ route('index') }}">Inicio</a>
+        @foreach ($categories as $category)
+            <a class="nav-link" href="{{ route('catalog', $category->slug) }}">{{ $category->name }}</a>
+        @endforeach
+    </div>
+
+    <div class="p-3">
+        @foreach ($main_categories as $category)
+            <div class="col-md-4">
+                <div class="cat-item mb-20">
+                    <a href="{{ route('catalog', $category->slug) }}" class="thumb">
+                        <div class="image">
+                            @if ($category->image == null)
+                                <img src="{{ asset('img/categories/no_category.jpg') }}" alt="" width="100%">
+                            @else
+                                <img src="{{ asset('img/categories/' . $category->image) }}" alt=""
+                                    width="100%">
+                            @endif
+                        </div>
+                        <div class="content mt-3">
+                            <h3 class="mb-3 mt-0">{{ $category->name }}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        @endforeach
+
+    </div>
+</div>
 
 {{--
 <nav class="pt-4 pb-4">
@@ -340,6 +423,17 @@ justify-content-between d-flex align-items-center"
         $("#menu-mobile").on("click", function() {
             toggleMenu();
         });
+
+        $('#showMNav').on("click", function() {
+            $('.collapse-nav').addClass('active');
+            $('header').addClass('bye');
+        });
+
+        $('#byeCollapse').on("click", function() {
+            $('.collapse-nav').removeClass('active');
+            $('header').removeClass('bye');
+        });
+
 
         $(".sidebar-overlay").on("click", function() {
             $("body").removeClass("toggled");

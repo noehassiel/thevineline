@@ -3,7 +3,6 @@ import 'lenis/dist/lenis.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BlurScrollEffect as BlurScrollEffect2 } from './blurScrollEffect.js';
-import barba from '@barba/core';
 
 
 if (window.location.pathname === '/' || window.location.pathname === '/') {
@@ -182,18 +181,30 @@ function initMarquee(boxWidth, time) {
 
 }
 
-barba.init({
-    transitions: [{
-        name: 'opacity-transition',
-        leave(data) {
-            return gsap.to(data.current.container, {
-                opacity: 0
-            });
-        },
-        enter(data) {
-            return gsap.from(data.next.container, {
-                opacity: 0
-            });
-        }
-    }],
-});
+function delay(n) {
+    n = n || 2000;
+    return new Promise((done) => {
+        setTimeout(() => {
+            done();
+        }, n);
+    });
+}
+
+function pageTransition() {
+    var tl = gsap.timeline();
+    tl.to(".loading-screen", {
+        duration: 1.2,
+        width: "100%",
+        left: "0%",
+        ease: "Expo.easeInOut",
+    });
+
+    tl.to(".loading-screen", {
+        duration: 1,
+        width: "100%",
+        left: "100%",
+        ease: "Expo.easeInOut",
+        delay: 0.3,
+    });
+    tl.set(".loading-screen", { left: "-100%" });
+}

@@ -96,6 +96,10 @@
                                 <div class="card-half card-left">
                                     <div class="card-slide">
                                         <div class="slide-content">
+                                            <div class="slide-text">
+                                                <div>The spirit of street culture with high-quality craftsmanship</div>
+                                                <a href="">Comprar</a>
+                                            </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
                                                 <video src="{{ asset('themes/thevineline/img/boy-1.webm') }}" autoplay muted
@@ -105,6 +109,10 @@
                                     </div>
                                     <div class="card-slide">
                                         <div class="slide-content">
+                                            <div class="slide-text white">
+                                                <div>The spirit of street culture with high-quality craftsmanship</div>
+                                                <a href="">Comprar</a>
+                                            </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
                                                 <video src="{{ asset('themes/thevineline/img/girl-1.webm') }}" autoplay
@@ -119,6 +127,10 @@
                                 <div class="card-half card-right">
                                     <div class="card-slide">
                                         <div class="slide-content">
+                                            <div class="slide-text">
+                                                <div>The spirit of street culture with high-quality craftsmanship</div>
+                                                <a href="">Comprar</a>
+                                            </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
                                                 <video src="{{ asset('themes/thevineline/img/boy-2.webm') }}" autoplay muted
@@ -128,6 +140,10 @@
                                     </div>
                                     <div class="card-slide">
                                         <div class="slide-content">
+                                            <div class="slide-text white">
+                                                <div>The spirit of street culture with high-quality craftsmanship</div>
+                                                <a href="">Comprar</a>
+                                            </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
                                                 <video src="{{ asset('themes/thevineline/img/girl-2.webm') }}" autoplay
@@ -153,6 +169,10 @@
                     <div class="card-mobile">
                         <div class="card-slide">
                             <div class="slide-content">
+                                <div class="slide-text">
+                                    <div>The spirit of street culture with high-quality craftsmanship</div>
+                                    <a href="">Comprar</a>
+                                </div>
                                 <div class="slide-bg">
                                     <div class="overlay"></div>
                                     <video src="{{ asset('themes/thevineline/img/boy-1.webm') }}" autoplay muted loop
@@ -167,6 +187,10 @@
                     <div class="card-mobile">
                         <div class="card-slide">
                             <div class="slide-content">
+                                <div class="slide-text white">
+                                    <div> The spirit of street culture with high-quality craftsmanship</div>
+                                    <a href="">Comprar</a>
+                                </div>
                                 <div class="slide-bg">
                                     <div class="overlay"></div>
                                     <video src="{{ asset('themes/thevineline/img/girl-2.webm') }}" autoplay muted loop
@@ -370,6 +394,7 @@
         @endif
     </section>
 
+    {{--
     @if (Session::has('watch_history'))
         <section class="vine-section watch-history">
             <div class="section-body">
@@ -428,7 +453,7 @@
             </div>
         </section>
     @endif
-
+         --}}
 
     <!--COOL CTA-->
     <section class="vine-section">

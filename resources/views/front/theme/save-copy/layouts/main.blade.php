@@ -30,12 +30,15 @@
 </head>
 
 <body data-barba="wrapper">
+
+
+
     @if (Auth::check())
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._werkn_bar')
     @endif
     @include('front.theme.werkn-backbone-bootstrap.layouts.header')
 
-    <main class="mb-5" data-barba="container" data-barba-namespace="home">
+    <main class="mb-5" data-barba="container" data-barba-namespace="home-section">
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._headerbands')
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._messages')
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._modal_messages')
@@ -139,6 +142,8 @@
             @stack('pixel-events')
         @endif
     @endforeach
+
+    <div class="overlay transition-overlay"></div>
 
     <script type="text/javascript">
         $('.contact_action').on('click', function() {
