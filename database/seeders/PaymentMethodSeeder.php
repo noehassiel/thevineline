@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Nowyouwerkn\WeCommerce\Models\PaymentMethod; 
+use Nowyouwerkn\WeCommerce\Models\PaymentMethod;
 
 class PaymentMethodSeeder extends Seeder
 {
@@ -23,31 +23,31 @@ class PaymentMethodSeeder extends Seeder
         PaymentMethod::create([
             'type' => 'card',
             'supplier' => 'Stripe',
-             'is_active' => false
+            'is_active' => false
         ]);
 
         PaymentMethod::create([
             'type' => 'card',
             'supplier' => 'OxxoPay',
-             'is_active' => false
+            'is_active' => false
         ]);
 
         PaymentMethod::create([
             'type' => 'cash',
             'supplier' => 'Conekta',
-             'is_active' => false
+            'is_active' => false
         ]);
 
         PaymentMethod::create([
             'type' => 'card',
             'supplier' => 'Paypal',
-             'is_active' => false
+            'is_active' => false
         ]);
 
         PaymentMethod::create([
             'type' => 'card',
             'supplier' => 'OpenPay',
-             'is_active' => false
+            'is_active' => false
         ]);
 
         PaymentMethod::create([
@@ -61,6 +61,12 @@ class PaymentMethodSeeder extends Seeder
         PaymentMethod::create([
             'type' => 'card',
             'supplier' => 'Kueski',
+            'is_active' => false
+        ]);
+
+        PaymentMethod::create([
+            'type' => 'card',
+            'supplier' => 'Aplazo',
             'is_active' => false
         ]);
     }
