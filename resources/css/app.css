@@ -866,10 +866,20 @@ nav .nav-link {
     height: 100%;
 }
 
+.vine-product .imgDetail .swiper-wrapper {
+    height: 100%;
+}
+
 .vine-product .imgDetail .swiper-slide {
     width: 100%;
     border-right: 1px solid #e3e3e3;
     background-color: #222;
+    height: 100%;
+    position: relative;
+}
+
+.vine-product .imgDetail .swiper-slide img {
+    position: absolute;
 }
 
 

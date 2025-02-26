@@ -76,8 +76,8 @@
     <section class="vine-product">
         <div class="division-line"></div>
 
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
                 <div class="col-md-2 p-4">
                     <div class="d-flex flex-column justify-content-between h-100">
                         <div>
@@ -104,6 +104,22 @@
                                 </div>
 
                                 <p>{{ $product->description }}</p>
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Launch demo modal
+                                </button>
+
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Launch demo modal
+                                </button>
+
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Launch demo modal
+                                </button>
                             </div>
                             <div>
                                 <div class="product-actions d-flex align-items-center mt-5">
@@ -160,7 +176,8 @@
                                     @endif
 
                                     @if ($shipment_option != null)
-                                        <p class="text-primary mt-4"><ion-icon name="bag-handle-outline"></ion-icon> Récibelo de
+                                        <p class="text-primary mt-4"><ion-icon name="bag-handle-outline"></ion-icon> Récibelo
+                                            de
                                             {{ $shipment_option->delivery_time }} al seleccionar <br>
                                             {{ $shipment_option->name }}
                                             en
@@ -178,14 +195,14 @@
                                             </a>
                                         </div>
                                     @endforeach
+
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10 pe-md-0 ">
-                        <div class="">
-                            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                                class="swiper mySwiper2 imgDetail">
+                        <div class="h-100">
+                            <div class="swiper mySwiper2 imgDetail">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <img src="{{ asset('img/products/' . $product->image) }}"
@@ -225,42 +242,26 @@
             </div>
         </section>
 
-
-        <section class="product-detail">
-            {{--
-        <div class="wk-product-travel-nav pt-3 pb-3 mb-5">
-            <div class="container">
-                <div class="d-flex align-items-center justify-content-between">
-                    @if (!empty($last_product))
-                        <div class="previous-product text-start">
-                            <a href="{{ route('detail', [$last_product->category->slug, $last_product->slug]) }}"
-                                class="btn btn-link"><ion-icon name="arrow-back-outline"></ion-icon> Producto anterior</a>
-                        </div>
-                    @endif
-
-                    <div class="breadcrumb-content text-center">
-                        <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="{{ route('index') }}">Inicio</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('catalog.all') }}">Catálogo</a></li>
-                            <li class="breadcrumb-item"><a
-                                    href="{{ route('catalog.all') }}">{{ $product->category->name ?? 'Sin Categoría' }}</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
-                        </ol>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-
-                    @if (!empty($next_product))
-                        <div class="next-product text-end">
-                            <a href="{{ route('detail', [$next_product->category->slug, $next_product->slug]) }}"
-                                class="btn btn-link">Siguiente producto <ion-icon
-                                    name="arrow-forward-outline"></ion-icon></a>
-                        </div>
-                    @endif
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
                 </div>
             </div>
         </div>
-         --}}
 
+        <section class="product-detail">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -824,11 +825,11 @@
                                                         @endguest
 
                                                         <!--
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="comment-check-box">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <input type="checkbox" id="comment-check">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <label for="comment-check">Save my name and email in this browser for the next time I comment.</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="comment-check-box">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <input type="checkbox" id="comment-check">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <label for="comment-check">Save my name and email in this browser for the next time I comment.</label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -->
                                                         <button type="submit" class="btn btn-primary mt-5">Publicar
                                                             Reseña</button>
                                                     </form>
@@ -973,7 +974,6 @@
                     slidesPerView: "auto",
                     freeMode: true,
                     spaceBetween: 8,
-                    watchSlidesProgress: true,
                 });
                 var swiper2 = new Swiper(".mySwiper2", {
                     slidesPerView: "auto",
