@@ -30,7 +30,10 @@
                         <div></div>
 
                         <div class="col-12">
-                            <h3 class="brand-name">The <span>V</span>ineline</h3>
+
+                            <img class="brand-name mb-4" src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}"
+                                alt="" width="150">
+
                             <h1 class="title-1"><span>S</span>ee the world, not your screen.</h1>
 
                             <a class="hero-btn" href="{{ route('catalog.all') }}" class="btn btn-primary">Comprar</a>
@@ -133,8 +136,8 @@
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <video src="{{ asset('themes/thevineline/img/boy-2.webm') }}" autoplay muted
-                                                    loop playsinline></video>
+                                                <video src="{{ asset('themes/thevineline/img/boy-2.webm') }}" autoplay
+                                                    muted loop playsinline></video>
                                             </div>
                                         </div>
                                     </div>

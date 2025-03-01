@@ -43,7 +43,7 @@ body {
 button,
 a,
 p {
-    font-family: 'nhr';
+    font-family: "Figtree", sans-serif;
 }
 
 span {
@@ -485,7 +485,7 @@ nav .nav-link {
     flex-direction: column;
     justify-content: space-between;
     color: #e3e3e3;
-    font-family: nhm;
+    font-family: "Figtree", sans-serif;
     font-size: 1.5rem;
     line-height: 1;
 }
@@ -598,12 +598,12 @@ nav .nav-link {
     max-width: 1000px;
     min-width: 300px;
     line-height: 1.2;
-    font-family: "nhr", sans-serif;
+    font-family: "Figtree", sans-serif;
     font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
 .blur-text--2 {
-    font-family: "nhr", sans-serif;
+    font-family: "Figtree", sans-serif;
     font-variation-settings: "wdth" 80, "wght" 300;
 }
 
