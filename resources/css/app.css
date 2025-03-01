@@ -986,6 +986,10 @@ nav .nav-link {
     z-index: 990;
 }
 
+.filters.off {
+    bottom: -30%;
+}
+
 @media (min-width: 900.02px) {
     .filters {
         right: 0;

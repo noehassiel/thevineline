@@ -427,11 +427,14 @@
         $('#showMNav').on("click", function() {
             $('.collapse-nav').addClass('active');
             $('header').addClass('bye');
+
+            $('.filters').toggle('off');
         });
 
         $('#byeCollapse').on("click", function() {
             $('.collapse-nav').removeClass('active');
             $('header').removeClass('bye');
+            $('.filters').toggle('off');
         });
 
 
