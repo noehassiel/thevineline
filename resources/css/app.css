@@ -1198,3 +1198,45 @@ nav .nav-link {
     z-index: 99;
     pointer-events: none;
 }
+
+
+/*FOOTER*/
+footer {
+    padding: .8333333333rem;
+    background-image: linear-gradient(#2e2c2a, #44413c);
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+footer .content {
+    background-color: #F3F2EC;
+    padding: 1.9444444444rem;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+footer .highlight {
+    z-index: 0;
+    filter: blur(10em);
+    background-color: #d4c9bb;
+    border-radius: 17em;
+    width: 50em;
+    height: 50em;
+    position: absolute;
+    inset: auto auto -20% -10%;
+    transform-style: preserve-3d;
+    will-change: transform;
+    mix-blend-mode: difference;
+}
+
+
+@media (min-width: 900.02px) {
+    footer {
+        padding: 1.9444444444rem;
+    }
+}

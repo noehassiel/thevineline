@@ -208,3 +208,17 @@ function pageTransition() {
     });
     tl.set(".loading-screen", { left: "-100%" });
 }
+
+
+gsap.to(".highlight", {
+    x: "80vw",
+    y: "40vh",
+    duration: 10,
+    ease: "none",
+    repeat: -1,
+    yoyo: true,
+    modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % window.innerWidth),
+        y: gsap.utils.unitize(y => parseFloat(y) % window.innerHeight)
+    }
+});

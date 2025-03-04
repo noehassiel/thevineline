@@ -8,7 +8,12 @@
 
 @section('content')
 
-
+    <!--LOADER -->
+    <div class="loader">
+        <div class="loading">
+            <div class="loading-spin"></div>
+        </div>
+    </div>
 
     @php
         $banner_main = Nowyouwerkn\WeCommerce\Models\Banner::where('is_promotional', false)
