@@ -84,7 +84,7 @@
     @include('front.theme.werkn-backbone-bootstrap.layouts.partials._headerbands')
     @include('front.theme.werkn-backbone-bootstrap.layouts.header')
 
-    <main class="mb-5">
+    <main>
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._messages')
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._modal_messages')
         @yield('content')
