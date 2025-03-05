@@ -67,6 +67,13 @@
     }
 }
 
+.btn-primary {
+    background-color: #0E3CF6;
+    border-color: #0E3CF6;
+    color: #E0E0E0;
+    border-radius: 6px;
+}
+
 body {
     background-color: #EBEBEB;
     color: #010101;
@@ -338,6 +345,11 @@ nav .nav-link {
     .vine-section {
         padding-inline: 0 calc(160px + 20px*2);
     }
+}
+
+.vine-section.dark-section {
+    background-color: #222;
+    color: #E0E0E0;
 }
 
 .section-body {
@@ -982,6 +994,10 @@ nav .nav-link {
 
 .vine-product .imgDetail {
     height: 100%;
+}
+
+.imgDetail .swiper-wrapper {
+    cursor: url('/img/arrastra.png'), auto !important;
 }
 
 .vine-product .imgDetail .swiper-wrapper {
