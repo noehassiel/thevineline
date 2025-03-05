@@ -150,10 +150,9 @@
                                         <div class="product-details-info mt-4">
                                             <!-- Variantes Principales -->
                                             @if ($product->variants->count() != 0)
-                                                <h6 class="wk-variant-title">Escoge tu variante <span
-                                                        class="text-warning">Existencias
-                                                        totales: {{ $product->stock }} <ion-icon
-                                                            name="alert-circle-outline"></ion-icon></span></h6>
+                                                <span class="text-warning">Existencias
+                                                    totales: {{ $product->stock }} <ion-icon
+                                                        name="alert-circle-outline"></ion-icon></span>
 
                                                 <ul class="wk-variant-list d-flex list-unstyled">
                                                     @foreach ($product->variants as $variant)
@@ -185,7 +184,7 @@
                                             </div>
                                         @else
                                             <a href="#" id="addToCartBtn"
-                                                class="btn btn-primary d-flex align-items-center w-100 justify-content-between pt-4 text-white"
+                                                class="btn btn-primary d-flex align-items-center w-100 justify-content-between pt-md-4 text-white"
                                                 role="button">
                                                 <div id="size-alert" class="size-alert">Selecciona una talla.</div>
                                                 Agregar a carrito
@@ -205,7 +204,7 @@
                                         @else
                                             <a href="{{ route('add-cart', ['id' => $product->id, 'variant' => 'unique']) }}"
                                                 id="addToCartBtn"
-                                                class="btn btn-primary d-flex align-items-center w-100 justify-content-between pt-4 text-white"
+                                                class="btn btn-primary d-flex align-items-center w-100 justify-content-between pt-md-4 text-white"
                                                 role="button">
                                                 Agregar a carrito
                                                 <ion-icon name="bag-add-outline" class="me-2"></ion-icon>
@@ -262,7 +261,7 @@
             <div class="section-body">
                 <div class="vine-container">
                     <div class="vine-container-content">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs p-2" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
                                     data-bs-target="#details" type="button" role="tab" aria-controls="details"
@@ -276,12 +275,19 @@
                         </ul>
 
                         <div class="container-fluid">
-                            <div class="tab-content mt-4" id="myTabContent">
+                            <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="details" role="tabpanel"
                                     aria-labelledby="details-tab">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p>{{ $product->care_instructions }}</p>
+                                    <div class="product-details">
+                                        <div class="row h-100">
+                                            <div class="col-md-4 py-2">
+                                                <p>{{ $product->description }}</p>
+                                            </div>
+                                            <div class="col-md-8 position-relative p-0" style="overflow:hidden">
+                                                <img src="{{ asset('img/products/' . $product->image) }}"
+                                                    alt="{{ $product->name }}" class="position-absolute"
+                                                    style="width: 100%; height: 100%; object-fit: cover;">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -492,11 +498,11 @@
                                                 @endguest
 
                                                 <!--
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="comment-check-box">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <input type="checkbox" id="comment-check">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <label for="comment-check">Save my name and email in this browser for the next time I comment.</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="comment-check-box">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <input type="checkbox" id="comment-check">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <label for="comment-check">Save my name and email in this browser for the next time I comment.</label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -->
                                                 <button type="submit" class="btn btn-primary mt-5">Publicar
                                                     Reseña</button>
                                             </form>
@@ -595,7 +601,7 @@
             <div class="section-body">
                 <div class="vine-container">
                     <div class="vine-container-content">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs p-2" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="more-tab" data-bs-toggle="tab" data-bs-target="#more"
                                     type="button" role="tab" aria-controls="more" aria-selected="true">Te podría
@@ -612,74 +618,84 @@
                                 <div class="tab-pane fade show active" id="more" role="tabpanel"
                                     aria-labelledby="more-tab">
                                     @if ($products_selected->count() != 0)
-                                        <section class="related-products mt-5">
-                                            <div class="container">
-                                                <div class="row related-product-active">
-                                                    @foreach ($products_selected as $product_info)
-                                                        <div class="col-3">
-                                                            @include('front.theme.werkn-backbone-bootstrap.layouts.utilities._product_card')
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                        </section>
+                                        <div class="d-flex justify-content-between flex-products flex-md-row flex-column">
+                                            @foreach ($products_selected->take(4) as $product_info)
+                                                @include('front.theme.werkn-backbone-bootstrap.layouts.utilities._product_card')
+                                            @endforeach
+                                        </div>
                                     @endif
                                 </div>
                                 <div class="tab-pane fade" id="story" role="tabpanel" aria-labelledby="story-tab">
                                     @if (Session::has('watch_history'))
-                                        <div class="container mt-5 mb-4">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="row">
+                                        <div class="d-flex justify-content-between flex-products flex-md-row flex-column">
+                                            @php
+                                                $oldRecommend = Session::get('watch_history');
+                                                $recommendations = new Nowyouwerkn\WeCommerce\Models\WatchHistory(
+                                                    $oldRecommend,
+                                                );
+
+                                                foreach ($recommendations->items as $r) {
+                                                    $categories = $r['category'];
+                                                }
+
+                                                $recommeded_products = Nowyouwerkn\WeCommerce\Models\Product::whereIn(
+                                                    'category_id',
+                                                    [$categories],
+                                                )
+                                                    ->take(4)
+                                                    ->inRandomOrder()
+                                                    ->get();
+                                            @endphp
+
+                                            @foreach ($recommeded_products as $rec_products)
+                                                <div class="product-card mb-4">
+                                                    <a href="{{ route('detail', [$rec_products->category->slug, $rec_products->slug]) }}"
+                                                        class="card-body">
+
                                                         @php
-                                                            $oldRecommend = Session::get('watch_history');
-                                                            $recommendations = new Nowyouwerkn\WeCommerce\Models\WatchHistory(
-                                                                $oldRecommend,
-                                                            );
-
-                                                            foreach ($recommendations->items as $r) {
-                                                                $categories = $r['category'];
-                                                            }
-
-                                                            $recommeded_products = Nowyouwerkn\WeCommerce\Models\Product::whereIn(
-                                                                'category_id',
-                                                                [$categories],
+                                                            $second_image = \Nowyouwerkn\WeCommerce\Models\ProductImage::where(
+                                                                'product_id',
+                                                                $rec_products->id,
                                                             )
-                                                                ->take(4)
-                                                                ->inRandomOrder()
-                                                                ->get();
+                                                                ->skip(1)
+                                                                ->first();
                                                         @endphp
 
-                                                        @foreach ($recommeded_products as $rec_products)
-                                                            <div class="col-6 col-md-3">
-                                                                <a class="small-product-card"
-                                                                    href="{{ route('detail', [$rec_products->category->slug, $rec_products->slug]) }}">
-                                                                    <img alt="{{ $rec_products->name }}"
-                                                                        style="width: 100px;"
-                                                                        src="{{ asset('img/products/' . $rec_products->image) }}">
+                                                        <img class="card-img-top @if ($second_image != null) second-image @endif"
+                                                            src="{{ asset('img/products/' . $rec_products->image) }}"
+                                                            data-holder-rendered="true">
 
-                                                                    <div class="small-product-card-info">
-                                                                        <h5 class="fs-6 mb-1">{{ $rec_products->name }}</h5>
-                                                                        @if ($rec_products->has_discount == true && $rec_products->discount_end > Carbon\Carbon::today())
-                                                                            <div class="wk-price" style="font-size:.8em;">
-                                                                                ${{ number_format($rec_products->discount_price, 2) }}
-                                                                            </div>
-                                                                            <div class="wk-price wk-price-discounted"
-                                                                                style="font-size:.7em !important; ">
-                                                                                ${{ number_format($rec_products->price, 2) }}
-                                                                            </div>
-                                                                        @else
-                                                                            <div class="wk-price" style="font-size:.8em;">
-                                                                                ${{ number_format($rec_products->price, 2) }}
-                                                                            </div>
-                                                                        @endif
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        @endforeach
-                                                    </div>
+                                                        @if ($second_image != null)
+                                                            <img class="card-img-bottom"
+                                                                src="{{ asset('img/products/' . $second_image->image) }}"
+                                                                data-holder-rendered="true">
+                                                        @endif
+
+                                                        <div class="overlay"></div>
+
+                                                        <div class="card-title">
+                                                            <h1>{{ $rec_products->name }}</h1>
+                                                            <p>{{ $rec_products->category->name }}</p>
+                                                        </div>
+
+                                                        <div
+                                                            class="card-info d-flex justify-content-between align-items-center">
+                                                            <!--PRICE-->
+                                                            @if ($rec_products->has_discount == true && $rec_products->discount_end > Carbon\Carbon::today())
+                                                                <div class="wk-price">
+                                                                    ${{ number_format($rec_products->discount_price, 2) }}
+                                                                </div>
+                                                                <div class="wk-price wk-price-discounted">
+                                                                    ${{ number_format($rec_products->price, 2) }}</div>
+                                                            @else
+                                                                <div class="wk-price">
+                                                                    ${{ number_format($rec_products->price, 2) }}</div>
+                                                            @endif
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                            </div>
+                                            @endforeach
+
                                         </div>
                                     @endif
                                 </div>
