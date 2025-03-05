@@ -5,10 +5,17 @@
             $second_image = \Nowyouwerkn\WeCommerce\Models\ProductImage::where('product_id', $product_info->id)
                 ->skip(1)
                 ->first();
+
+            $first_image = \Nowyouwerkn\WeCommerce\Models\ProductImage::where('product_id', $product_info->id)->first();
         @endphp
 
-        <img class="card-img-top @if ($second_image != null) second-image @endif"
-            src="{{ asset('img/products/' . $product_info->image) }}" data-holder-rendered="true">
+        @if ($product_info->image == null)
+            <img class="card-img-top @if ($second_image != null) second-image @endif"
+                src="{{ asset('img/products/' . $first_image->image) }}" data-holder-rendered="true">
+        @else
+            <img class="card-img-top @if ($second_image != null) second-image @endif"
+                src="{{ asset('img/products/' . $product_info->image) }}" data-holder-rendered="true">
+        @endif
 
         @if ($second_image != null)
             <img class="card-img-bottom" src="{{ asset('img/products/' . $second_image->image) }}"
