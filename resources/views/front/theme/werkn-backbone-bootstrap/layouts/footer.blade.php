@@ -31,11 +31,21 @@
             <div class="col-md-3 col-6">
                 <ul class="list-unstyled">
                     <li class="mb-3"><strong>Tienda</strong></li>
-                    <li><a href="{{ route('index') }}">Inicio</a></li>
-                    <li><a href="{{ route('catalog.all') }}">Catálogo</a></li>
+                    <li>
+                        <a class="footer-link" href="{{ route('index') }}">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="{{ route('catalog.all') }}">
+                            Catálogo
+                        </a>
+                    </li>
                     @foreach ($categories as $category)
                         <li>
-                            <a href="{{ route('catalog', $category->slug) }}">{{ $category->name }}</a>
+                            <a class="footer-link" href="{{ route('catalog', $category->slug) }}">
+                                {{ $category->name }}
+                            </a>
                         </li>
                     @endforeach
                 </ul>
@@ -45,14 +55,18 @@
                     <li class="mb-3"><strong>Soporte y Ayuda</strong></li>
                     @foreach ($legals as $legal)
                         <li>
-                            <a href="{{ route('legal.text', $legal->slug) }}">
+                            <a class="footer-link" href="{{ route('legal.text', $legal->slug) }}">
                                 {{ $legal->title }}
                             </a>
                         </li>
                     @endforeach
 
                     @if (!empty($faq))
-                        <li><a href="{{ route('faqs.text') }}">Preguntas Frecuentes</a></li>
+                        <li>
+                            <a class="footer-link" href="{{ route('faqs.text') }}">
+                                Preguntas Frecuentes
+                            </a>
+                        </li>
                     @endif
                 </ul>
             </div>
@@ -103,7 +117,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3 d-md-block d-none d-flex justify-content-end">
+            <div class="col-md-3 d-md-flex d-none justify-content-end">
                 <img src="{{ asset('assets/img/tvl/iso.svg') }}" alt="" width="30">
             </div>
         </div>
@@ -112,7 +126,11 @@
     <div class="d-flex align-items-start justify-content-between">
         <p>&copy; {{ Carbon\Carbon::now()->format('Y') }} The Vineline</p>
 
-        <p>Website designed and coded by <br><a href="">noehassiel</a></p>
+        <p>Website designed and coded by <br>
+            <a class="footer-link" href="https://www.linkedin.com/in/noehassiel/" target="_blank">
+                noehassiel
+            </a>
+        </p>
     </div>
 
     <div class="highlight"></div>

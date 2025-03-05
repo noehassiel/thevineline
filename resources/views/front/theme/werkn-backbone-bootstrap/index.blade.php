@@ -8,10 +8,19 @@
 
 @section('content')
 
-    <!--LOADER -->
-    <div class="loader">
-        <div class="loading">
-            <div class="loading-spin"></div>
+    <!-- Preloader starts -->
+    <div class="preloader">
+        <div class="wrapper-loader">
+            <div class="position-relative w-100">
+                <img src="{{ asset('assets/img/tvl/tvl-white.png') }}" alt="" style="width: 64px"
+                    class="left-star star-loader">
+                <img src="{{ asset('assets/img/tvl/tvl-white.png') }}" alt="" style="width: 64px"
+                    class="med-star star-loader">
+                <img src="{{ asset('assets/img/tvl/tvl-white.png') }}" alt="" style="width: 64px"
+                    class="right-star star-loader">
+            </div>
+            <img src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}" alt="" width="120"
+                style="margin-top: 6rem" class="logo-loader">
         </div>
     </div>
 
@@ -34,14 +43,13 @@
 
                         <div></div>
 
-                        <div class="col-12">
+                        <div class="col-12 d-flex flex-column align-items-center">
 
                             <img class="brand-name mb-4" src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}"
                                 alt="" width="150">
 
                             <h1 class="title-1"><span>S</span>ee the world, not your screen.</h1>
-
-                            <a class="hero-btn" href="{{ route('catalog.all') }}" class="btn btn-primary">Comprar</a>
+                            <a class="vine-btn" href="{{ route('catalog.all') }}" class="btn btn-primary">Comprar</a>
                         </div>
 
 
@@ -110,8 +118,8 @@
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <video src="{{ asset('themes/thevineline/img/boy-1.webm') }}" autoplay muted
-                                                    loop playsinline></video>
+                                                <video src="{{ asset('themes/thevineline/img/boy-1.webm') }}" autoplay
+                                                    muted loop playsinline></video>
                                             </div>
                                         </div>
                                     </div>
@@ -221,7 +229,7 @@
 
                     <div class="d-flex justify-content-between align-items-center fav-heading">
                         <h2><span>S</span>hop</h2>
-                        <a href="{{ route('catalog.all') }}" class="btn btn-primary">Comprar ahora</a>
+                        <a href="{{ route('catalog.all') }}" class="vine-btn">Comprar ahora</a>
                         <h2><span>N</span>ow</h2>
                     </div>
 
@@ -277,9 +285,9 @@
                     <div class="d-flex justify-content-between align-items-center mb-4 min-heading">
                         <h1 class="mb-0"><span>C</span>atalog</h1>
 
-                        <div class="btn btn-primary">
+                        <a href="" class="vine-btn">
                             Go shop
-                        </div>
+                        </a>
                     </div>
 
                     <div class="products-grid">

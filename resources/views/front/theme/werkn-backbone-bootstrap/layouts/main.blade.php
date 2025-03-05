@@ -88,6 +88,10 @@
     @include('front.theme.werkn-backbone-bootstrap.layouts.partials._cookies_notice')
     @include('front.theme.werkn-backbone-bootstrap.layouts.partials._modal_popup')
 
+
+    <svg class="cursor" width="25" height="25" viewBox="0 0 25 25">
+        <circle class="cursor__inner" cx="12.5" cy="12.5" r="6.25" />
+    </svg>
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">

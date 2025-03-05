@@ -3,12 +3,53 @@ import 'lenis/dist/lenis.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BlurScrollEffect as BlurScrollEffect2 } from './blurScrollEffect.js';
+import Cursor from './cursor';
+// Random stop between 30% and 80%
+let randomStop = Math.random() * (0.8 - 0.3) + 0.3;
+
+const cursor = new Cursor(document.querySelector('.cursor'));
 
 
 if (window.location.pathname === '/' || window.location.pathname === '/') {
     let textWrapper = document.querySelector('.title-1')
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
     let tl = gsap.timeline();
+
+
+    tl
+        .to(".med-star", {
+            opacity: 0,
+            duration: .5,
+        })
+        .to(".med-star", {
+            opacity: 1,
+            duration: .9,
+        })
+        .to(".left-star", {
+            opacity: 1,
+            y: -110,
+            x: '-160px',
+            duration: 1,
+        })
+        .to(".right-star", {
+            opacity: 1,
+            y: -110,
+            x: '160px',
+            duration: 1,
+        }, "-=1")
+        .to(".logo-loader", {
+            opacity: 1,
+            duration: .9,
+        })
+        .to(".preloader", {
+            delay: 1,
+            duration: .8,
+            ease: "power2.out",
+            top: '-110vh',
+            onComplete: () => {
+                document.querySelector(".preloader").style.display = "none";
+            }
+        });
 
     tl.fromTo('.brand-name', {
         opacity: 0,
@@ -222,3 +263,4 @@ gsap.to(".highlight", {
         y: gsap.utils.unitize(y => parseFloat(y) % window.innerHeight)
     }
 });
+
