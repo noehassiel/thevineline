@@ -100,13 +100,15 @@
         <a class="logo" href="{{ route('index') }}">
             @if (!empty($store_config))
                 @if ($store_config->store_logo == null)
-                    <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" class="img-fluid" width="200">
+                    <img src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}" alt="Logo" class="img-fluid"
+                        width="200">
                 @else
-                    <img src="{{ asset('assets/img/' . $store_config->store_logo) }}" alt="Logo" class="img-fluid"
+                    <img src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}" alt="Logo" class="img-fluid"
                         width="200">
                 @endif
             @else
-                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" class="img-fluid" width="200">
+                <img src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}" alt="Logo" class="img-fluid"
+                    width="200">
             @endif
         </a>
 
