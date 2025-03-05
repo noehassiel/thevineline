@@ -8,13 +8,20 @@
 
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ $store_config->store_name ?? 'WeCommerce' }}</title>
+    <title>{{ $store_config->store_name ?? 'The Vineline' }}</title>
 
     <!-- SEO -->
-    <meta name="description" content="{{ $store_config->store_name ?? 'WeCommerce' }}">
+    <meta name="description" content="{{ $store_config->store_name ?? 'The Vineline' }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @stack('seo')
 
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="The Vineline" />
+    <link rel="manifest" href="/site.webmanifest" />
     <!-- FAVICON -->
 
     <!-- CSS -->

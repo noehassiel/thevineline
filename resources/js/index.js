@@ -28,13 +28,13 @@ if (window.location.pathname === '/' || window.location.pathname === '/') {
         .to(".left-star", {
             opacity: 1,
             y: -110,
-            x: '-160px',
+            x: '-120px',
             duration: 1,
         })
         .to(".right-star", {
             opacity: 1,
             y: -110,
-            x: '160px',
+            x: '120px',
             duration: 1,
         }, "-=1")
         .to(".logo-loader", {

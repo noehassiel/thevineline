@@ -98,18 +98,8 @@
 
     <nav class="navmov">
         <a class="logo" href="{{ route('index') }}">
-            @if (!empty($store_config))
-                @if ($store_config->store_logo == null)
-                    <img src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}" alt="Logo" class="img-fluid"
-                        width="200">
-                @else
-                    <img src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}" alt="Logo" class="img-fluid"
-                        width="200">
-                @endif
-            @else
-                <img src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}" alt="Logo" class="img-fluid"
-                    width="200">
-            @endif
+            <img src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}" alt="Logo" class="img-fluid"
+                width="200">
         </a>
 
         <div class="d-flex justify-content-end align-items-center w-100 p-2" style="gap: 24px">
