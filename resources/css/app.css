@@ -1322,7 +1322,6 @@ nav .nav-link {
 footer {
     padding: .8333333333rem;
     background-image: linear-gradient(#2e2c2a, #44413c);
-    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1336,6 +1335,7 @@ footer .content {
     border-radius: 4px;
     position: relative;
     z-index: 2;
+    margin-bottom: 12rem;
 }
 
 footer .highlight {
