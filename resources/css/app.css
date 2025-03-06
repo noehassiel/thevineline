@@ -1097,6 +1097,13 @@ nav .nav-link {
     height: 72vh;
 }
 
+.total-reviews .progress {
+    height: 6px;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 0;
+}
+
 /*MARQUEE*/
 
 .wrapper {

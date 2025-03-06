@@ -297,12 +297,13 @@
                                 </div>
                                 <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6 py-3" style="border-right: 1px solid #ffffff7e;">
                                             @if ($product->approved_reviews->count() != 0)
-                                                <h5>Opiniones de clientes</h5>
-
-                                                <div class="d-flex">
-                                                    <div class="rating d-flex mt-2">
+                                                <div class="d-flex aling-items-center">
+                                                    <small>
+                                                        {{ round($product->approved_reviews->avg('rating')) }}
+                                                    </small>
+                                                    <div class="rating d-flex align-items-center mx-3">
                                                         @if (round($product->approved_reviews->avg('rating'), 0) == 0)
                                                             <ion-icon name="star-outline"></ion-icon>
                                                             <ion-icon name="star-outline"></ion-icon>
@@ -351,19 +352,16 @@
                                                             <ion-icon name="star"></ion-icon>
                                                         @endif
                                                     </div>
-
-                                                    <p>{{ round($product->approved_reviews->avg('rating')) }} de 5</p>
+                                                    <small>
+                                                        Basado en {{ $product->approved_reviews->count() }} reseñas
+                                                    </small>
                                                 </div>
 
-                                                <p>{{ $product->approved_reviews->count() }} califaciones globales</p>
-
-                                                <ul class="list-group list-group-flush">
-                                                    <a href="{{ route('reviews.filter', [$product->id, '5']) }}"
-                                                        class="list-group-item d-flex justify-content-between align-items-center ">
-                                                        <p class="mb-0">5 estrellas</p>
-                                                        <div class="progress mb-0 mt-0" style="width: 50%;">
+                                                <div class="total-reviews mt-4">
+                                                    <div class="d-flex align-items-center" style="gap: 1.4rem">
+                                                        <p class="mb-0">5 <ion-icon name="star"></ion-icon></p>
+                                                        <div class="progress mb-0 mt-0" style="width: 280px;">
                                                             <div class="progress-bar" role="progressbar"
-                                                                aria-label="Basic example"
                                                                 style="width: {{ ($product->approved_reviews->where('rating', 5)->count() * 100) / $product->approved_reviews->count() }}%"
                                                                 aria-valuenow="{{ ($product->approved_reviews->where('rating', 5)->count() * 100) / $product->approved_reviews->count() }}"
                                                                 aria-valuemin="0" aria-valuemax="100"></div>
@@ -371,13 +369,12 @@
                                                         <p class="mb-0">
                                                             {{ ($product->approved_reviews->where('rating', 5)->count() * 100) / $product->approved_reviews->count() }}%
                                                         </p>
-                                                    </a>
-                                                    <a href="{{ route('reviews.filter', [$product->id, '4']) }}"
-                                                        class="list-group-item d-flex justify-content-between align-items-center">
-                                                        <p class="mb-0">4 estrellas</p>
-                                                        <div class="progress mb-0 mt-0" style="width: 50%;">
+                                                    </div>
+
+                                                    <div class="d-flex align-items-center" style="gap: 1.4rem">
+                                                        <p class="mb-0">4 <ion-icon name="star"></ion-icon></p>
+                                                        <div class="progress mb-0 mt-0" style="width: 280px;">
                                                             <div class="progress-bar" role="progressbar"
-                                                                aria-label="Basic example"
                                                                 style="width: {{ ($product->approved_reviews->where('rating', 4)->count() * 100) / $product->approved_reviews->count() }}%"
                                                                 aria-valuenow="{{ ($product->approved_reviews->where('rating', 4)->count() * 100) / $product->approved_reviews->count() }}"
                                                                 aria-valuemin="0" aria-valuemax="100"></div>
@@ -385,13 +382,12 @@
                                                         <p class="mb-0">
                                                             {{ ($product->approved_reviews->where('rating', 4)->count() * 100) / $product->approved_reviews->count() }}%
                                                         </p>
-                                                    </a>
-                                                    <a href="{{ route('reviews.filter', [$product->id, '3']) }}"
-                                                        class="list-group-item d-flex justify-content-between align-items-center">
-                                                        <p class="mb-0">3 estrellas</p>
-                                                        <div class="progress mb-0 mt-0" style="width: 50%;">
+                                                    </div>
+
+                                                    <div class="d-flex align-items-center" style="gap: 1.4rem">
+                                                        <p class="mb-0">3 <ion-icon name="star"></ion-icon></p>
+                                                        <div class="progress mb-0 mt-0" style="width: 280px;">
                                                             <div class="progress-bar" role="progressbar"
-                                                                aria-label="Basic example"
                                                                 style="width: {{ ($product->approved_reviews->where('rating', 3)->count() * 100) / $product->approved_reviews->count() }}%"
                                                                 aria-valuenow="{{ ($product->approved_reviews->where('rating', 3)->count() * 100) / $product->approved_reviews->count() }}"
                                                                 aria-valuemin="0" aria-valuemax="100"></div>
@@ -399,13 +395,12 @@
                                                         <p class="mb-0">
                                                             {{ ($product->approved_reviews->where('rating', 3)->count() * 100) / $product->approved_reviews->count() }}%
                                                         </p>
-                                                    </a>
-                                                    <a href="{{ route('reviews.filter', [$product->id, '2']) }}"
-                                                        class="list-group-item d-flex justify-content-between align-items-center">
-                                                        <p class="mb-0">2 estrellas</p>
-                                                        <div class="progress mb-0 mt-0" style="width: 50%;">
+                                                    </div>
+
+                                                    <div class="d-flex align-items-center" style="gap: 1.4rem">
+                                                        <p class="mb-0">2 <ion-icon name="star"></ion-icon></p>
+                                                        <div class="progress mb-0 mt-0" style="width: 280px;">
                                                             <div class="progress-bar" role="progressbar"
-                                                                aria-label="Basic example"
                                                                 style="width: {{ ($product->approved_reviews->where('rating', 2)->count() * 100) / $product->approved_reviews->count() }}%"
                                                                 aria-valuenow="{{ ($product->approved_reviews->where('rating', 2)->count() * 100) / $product->approved_reviews->count() }}"
                                                                 aria-valuemin="0" aria-valuemax="100"></div>
@@ -413,13 +408,12 @@
                                                         <p class="mb-0">
                                                             {{ ($product->approved_reviews->where('rating', 2)->count() * 100) / $product->approved_reviews->count() }}%
                                                         </p>
-                                                    </a>
-                                                    <a href="{{ route('reviews.filter', [$product->id, '1']) }}"
-                                                        class="list-group-item d-flex justify-content-between align-items-center">
-                                                        <p class="mb-0">1 estrellas</p>
-                                                        <div class="progress mb-0 mt-0" style="width: 50%;">
+                                                    </div>
+
+                                                    <div class="d-flex align-items-center" style="gap: 1.4rem">
+                                                        <p class="mb-0">1 <ion-icon name="star"></ion-icon></p>
+                                                        <div class="progress mb-0 mt-0" style="width: 280px;">
                                                             <div class="progress-bar" role="progressbar"
-                                                                aria-label="Basic example"
                                                                 style="width: {{ ($product->approved_reviews->where('rating', 1)->count() * 100) / $product->approved_reviews->count() }}%"
                                                                 aria-valuenow="{{ ($product->approved_reviews->where('rating', 1)->count() * 100) / $product->approved_reviews->count() }}"
                                                                 aria-valuemin="0" aria-valuemax="100"></div>
@@ -427,24 +421,21 @@
                                                         <p class="mb-0">
                                                             {{ ($product->approved_reviews->where('rating', 1)->count() * 100) / $product->approved_reviews->count() }}%
                                                         </p>
-                                                    </a>
-                                                </ul>
+                                                    </div>
+                                                </div>
                                             @else
                                                 <p>No hay reseñas para este producto todavía. Se el primero en hablar de
                                                     "{{ $product->name }}"</p>
                                             @endif
 
-                                        </div>
-
-                                        <div class="col-md-8">
                                             <form action="{{ route('reviews.store', $product->id) }}" method="POST"
-                                                class="comment-form review-form">
+                                                class="comment-form review-form mt-4">
                                                 {{ csrf_field() }}
 
                                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
 
 
-                                                <h5 class="mb-2">Tu reseña <span class="text-danger ">*</span></h5>
+                                                <p class="mb-2">Tu reseña <span class="text-danger ">*</span></p>
 
                                                 <div class="rate">
                                                     <input type="radio" id="star5" name="rating" value="5" />
@@ -500,16 +491,13 @@
                                                     </div>
 
                                                 @endguest
-
-                                                <!--
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="comment-check-box">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <input type="checkbox" id="comment-check">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <label for="comment-check">Save my name and email in this browser for the next time I comment.</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -->
                                                 <button type="submit" class="btn btn-primary mt-5">Publicar
                                                     Reseña</button>
                                             </form>
+                                        </div>
+
+                                        <div class="col-md-6 py-3">
+
 
                                             @if ($product->approved_reviews->count() != 0)
                                                 @foreach ($product->approved_reviews as $review)
