@@ -350,9 +350,11 @@
                                     </div>
                                     @if (!empty($products))
                                         @if ($shipment_options->count() != 0)
-                                            <button class="we-co--btn-coupon select-shipment-first" id="apply_points" type="button">Canjear</button>
+                                            <button class="we-co--btn-coupon select-shipment-first" id="apply_points"
+                                                type="button">Canjear</button>
                                         @else
-                                            <button class="we-co--btn-coupon" id="apply_points" type="button">Canjear</button>
+                                            <button class="we-co--btn-coupon" id="apply_points"
+                                                type="button">Canjear</button>
                                         @endif
                                     @endif
                                 </div>
@@ -392,12 +394,14 @@
 
 <p class="we-co--method">Tu pago será procesado por <span id="paymentMethod">-</span></p>
 
+{{--
 <p class="mb-2 we-co--terms-links text-center"><small>
         Al confirmar la orden, aceptas nuestras
         @foreach ($legals as $legal)
             <a href="{{ route('legal.text', $legal->type) }}"> {{ $legal->title }} </a>
         @endforeach
     </small></p>
+     --}}
 
 @if ($preference != null)
     <input type="hidden" id="mp_preference" name="mp_preference" value="{{ $preference->init_point }}" />
@@ -688,10 +692,10 @@
                 $('#apply_points').on('click', function() {
                     event.preventDefault();
 
-                    if($(this).hasClass('reload-btn')){
+                    if ($(this).hasClass('reload-btn')) {
                         window.location.reload();
                     }
-                    
+
                     if ($(this).hasClass('select-shipment-first')) {
                         $('.cp-error').text('Selecciona un método de envío primero.');
                         $('.cp-error').fadeIn();
@@ -772,7 +776,7 @@
                 $('#apply_points').on('click', function() {
                     event.preventDefault();
 
-                    if($(this).hasClass('reload-btn')){
+                    if ($(this).hasClass('reload-btn')) {
                         window.location.reload();
                     }
 
@@ -838,4 +842,3 @@
         @endif
     @endif
 @endpush
-
