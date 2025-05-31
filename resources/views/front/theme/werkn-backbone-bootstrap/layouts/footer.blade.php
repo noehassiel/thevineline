@@ -99,6 +99,7 @@
                         </div>
                     @endif
 
+                    {{--
                     <script type="text/javascript">
                         //<![CDATA[
                         var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" :
@@ -107,6 +108,7 @@
                             "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
                         //]]>
                     </script>
+                     --}}
                 </div>
             </div>
             <div class="col-md-3">
