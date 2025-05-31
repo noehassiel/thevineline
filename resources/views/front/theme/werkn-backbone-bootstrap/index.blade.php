@@ -118,8 +118,7 @@
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <video src="{{ asset('themes/thevineline/img/boy-1.webm') }}" autoplay
-                                                    muted loop playsinline></video>
+                                                <img src="{{ asset('themes/thevineline/img/video-vl1.jpg') }}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -131,8 +130,7 @@
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <video src="{{ asset('themes/thevineline/img/girl-1.webm') }}" autoplay
-                                                    muted loop playsinline></video>
+                                                <img src="{{ asset('themes/thevineline/img/video-vl2.jpg') }}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -149,8 +147,7 @@
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <video src="{{ asset('themes/thevineline/img/boy-2.webm') }}" autoplay
-                                                    muted loop playsinline></video>
+                                                <img src="{{ asset('themes/thevineline/img/video-vl3.jpg') }}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -162,8 +159,7 @@
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <video src="{{ asset('themes/thevineline/img/girl-2.webm') }}" autoplay
-                                                    muted loop playsinline></video>
+                                                <img src="{{ asset('themes/thevineline/img/video-vl4.jpg') }}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -191,8 +187,7 @@
                                 </div>
                                 <div class="slide-bg">
                                     <div class="overlay"></div>
-                                    <video src="{{ asset('themes/thevineline/img/boy-1.webm') }}" autoplay muted loop
-                                        playsinline></video>
+                                    <img src="{{ asset('themes/thevineline/img/video-vl1.jpg') }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -209,8 +204,7 @@
                                 </div>
                                 <div class="slide-bg">
                                     <div class="overlay"></div>
-                                    <video src="{{ asset('themes/thevineline/img/girl-2.webm') }}" autoplay muted loop
-                                        playsinline></video>
+                                    <img src="{{ asset('themes/thevineline/img/video-vl2.jpg') }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -472,6 +466,7 @@
          --}}
 
     <!--COOL CTA-->
+    {{--
     <section class="vine-section">
         <div class="section-body">
             <div class="vine-container">
@@ -483,6 +478,7 @@
             </div>
         </div>
     </section>
+     --}}
 
 
     <!-- best-selling-area-end -->

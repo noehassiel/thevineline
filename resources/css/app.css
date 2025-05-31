@@ -587,7 +587,8 @@ nav .nav-link {
 }
 
 .editions .card-slide .slide-content .slide-bg video,
-.editions-mobile .card-mobile .card-slide .slide-content .slide-bg video {
+.editions-mobile .card-mobile .card-slide .slide-content .slide-bg video, .editions .card-slide .slide-content .slide-bg img,
+.editions-mobile .card-mobile .card-slide .slide-content .slide-bg img {
     aspect-ratio: auto;
     object-fit: cover;
     width: 100%;
@@ -1442,4 +1443,10 @@ footer .btn-media:hover {
     footer {
         padding: 1.9444444444rem;
     }
+}
+
+
+.auth-content{
+    margin-top: 12vh;
+    margin-bottom: 12vh;
 }

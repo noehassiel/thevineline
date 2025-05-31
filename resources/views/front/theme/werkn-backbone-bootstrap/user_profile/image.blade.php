@@ -10,7 +10,7 @@
 @section('content')
     <!-- Profile -->
     <section>
-        <div class="container catalog">
+        <div class="container catalog auth-content">
             <!-- Title -->
             <div class="row">
                 <div class="col-md-12">
@@ -36,7 +36,7 @@
                                     <a href="{{ route('profile') }}" class="btn btn-info float-right"><i class="fa fa-chevron-left"></i> Regresar</a>
                                 </div>
                             </div>
-                            
+
                             <hr>
 
                             <form role="form" method="POST" action="{{ route('profile.image.update', $user->id) }}" enctype="multipart/form-data">
@@ -71,7 +71,7 @@
 					      			</div>
 					      		</div>
 					      	</form>
-                        </section>          
+                        </section>
                     </div>
                 </div>
             </div>

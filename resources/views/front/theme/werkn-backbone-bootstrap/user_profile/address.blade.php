@@ -13,7 +13,7 @@
 
     <!-- Profile -->
     <section>
-        <div class="container catalog">
+        <div class="container catalog auth-content">
             <!-- Title -->
             <div class="row">
                 <div class="col-md-12">
@@ -34,7 +34,7 @@
                                     <h3>Lista de Direcciones</h3>
                                 </div>
                             </div>
-                            
+
                             <hr>
 
                             @if($addresses->count())
@@ -76,10 +76,10 @@
                                                             </div>
                                                       </div>
                                         </div>
-                                    </div>                      
+                                    </div>
                                 @endforeach
                             <form action="{{ route('address.store') }}" method="POST">
-                            {{ csrf_field() }}                                    
+                            {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-md-12 mt-3">
                                         <div class="card">
@@ -119,7 +119,7 @@
                                                             <input type="text" class="form-control" id="int_num" name="int_num" value="{{ $address->int_num ?? '' }}" />
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="zip">Colonia / Fraccionamiento <span class="text-danger">*</span></label>
@@ -141,8 +141,8 @@
                                                                 <option value="México" selected="">México</option>
                                                             </select>
                                                         </div>
-                                                    </div> 
-                                                    
+                                                    </div>
+
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="state">Estado <span class="text-danger">*</span></label>
@@ -158,7 +158,7 @@
                                                                     @endif
                                                                 @endforeach
                                                             </select>
-                                                            <!--      
+                                                            <!--
                                                             <input type="text" class="form-control" id="state" name="state" value="" required="" />
                                                             -->
                                                         </div>
@@ -189,7 +189,7 @@
                                 <div class="text-center my-5">
                                     <h4 class="mb-3">No haz guardado ninguna dirección.</h4>
                             <form action="{{ route('address.store') }}" method="POST">
-                            {{ csrf_field() }}                                    
+                            {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="card">
@@ -229,7 +229,7 @@
                                                             <input type="text" class="form-control" id="int_num" name="int_num" value="{{ $address->int_num ?? '' }}" />
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="zip">Colonia / Fraccionamiento <span class="text-danger">*</span></label>
@@ -251,8 +251,8 @@
                                                                 <option value="México" selected="">México</option>
                                                             </select>
                                                         </div>
-                                                    </div> 
-                                                    
+                                                    </div>
+
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="state">Estado <span class="text-danger">*</span></label>
@@ -268,7 +268,7 @@
                                                                     @endif
                                                                 @endforeach
                                                             </select>
-                                                            <!--      
+                                                            <!--
                                                             <input type="text" class="form-control" id="state" name="state" value="" required="" />
                                                             -->
                                                         </div>

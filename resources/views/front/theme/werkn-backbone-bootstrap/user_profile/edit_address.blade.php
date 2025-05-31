@@ -11,7 +11,7 @@
 @section('content')
     <!-- Profile -->
     <section>
-        <div class="container catalog">
+        <div class="container catalog auth-content">
             <!-- Title -->
             <div class="row">
                 <div class="col-md-12">
@@ -36,7 +36,7 @@
 				    		</div>
 				    	</div>
 						<hr>
-						
+
 				      	<form role="form" id="formAddress" method="POST" action="{{ route('address.update', $address->id) }}">
 				      		{{ csrf_field() }}
 				      		{{ method_field('PUT') }}

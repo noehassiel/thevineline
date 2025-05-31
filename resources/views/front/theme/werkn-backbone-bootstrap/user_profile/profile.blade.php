@@ -32,7 +32,7 @@
 @endphp
     <!-- Profile -->
     <section>
-        <div class="container">
+        <div class="container auth-content">
             <!-- Title -->
             <div class="row">
                 <div class="col-md-12">

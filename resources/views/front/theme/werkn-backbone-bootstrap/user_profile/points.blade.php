@@ -22,7 +22,7 @@
 @section('content')
     <!-- Profile -->
     <section>
-        <div class="container catalog">
+        <div class="container catalog auth-content>
             <!-- Title -->
             <div class="row">
                 <div class="col-md-12">

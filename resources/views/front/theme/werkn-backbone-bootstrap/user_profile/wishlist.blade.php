@@ -6,14 +6,14 @@
 
 @push('stylesheets')
 <style type="text/css">
-    
+
 </style>
 @endpush
 
 @section('content')
     <!-- Profile -->
     <section>
-        <div class="container catalog">
+        <div class="container catalog auth-content">
             <!-- Title -->
             <div class="row">
                 <div class="col-md-12">
@@ -47,11 +47,11 @@
                                         </div>
                                     </li>
                                 </ul>
-                            
+
                             </div>
 
                         </div>
-                        
+
                         <hr>
 
                         @if($wishlist->count())
@@ -82,7 +82,7 @@
                                                     <ion-icon name="star-outline"></ion-icon>
                                                     <ion-icon name="star-outline"></ion-icon>
                                                 @endif
-                                                
+
                                                 @if(round($product_info->product->approved_reviews->avg('rating'), 0) == 2)
                                                     <ion-icon name="star"></ion-icon>
                                                     <ion-icon name="star"></ion-icon>
@@ -106,7 +106,7 @@
                                                     <ion-icon name="star"></ion-icon>
                                                     <ion-icon name="star-outline"></ion-icon>
                                                 @endif
-                                                
+
                                                 @if(round($product_info->product->approved_reviews->avg('rating'), 0) == 5)
                                                     <ion-icon name="star"></ion-icon>
                                                     <ion-icon name="star"></ion-icon>
@@ -117,7 +117,7 @@
                                             </div>
 
                                             <p class="card-text text-truncate">{{$product_info->product->description}}</p>
-                                            
+
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
                                                     <a href="{{ route('detail', [$product_info->product->category->slug, $product_info->product->slug]) }}"  class="btn btn-sm btn-outline-secondary"><ion-icon name="eye-outline"></ion-icon></a>
@@ -144,7 +144,7 @@
                                     </div>
                                 </div>
                                 @endforeach
-                            </div> 
+                            </div>
                         @else
                             <div class="text-center my-5">
                                 <h4 class="mb-0">No tienes productos guardados.</h4>
