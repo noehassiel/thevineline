@@ -12,14 +12,14 @@
     <div class="preloader">
         <div class="wrapper-loader">
             <div class="position-relative w-100">
-                <img src="{{ asset('assets/img/tvl/tvl-white.png') }}" alt="" style="width: 64px"
+                <img src="{{ asset('assets/img/tvl/tvl-white.png') }}" alt="thevineline" style="width: 64px"
                     class="left-star star-loader">
-                <img src="{{ asset('assets/img/tvl/tvl-white.png') }}" alt="" style="width: 64px"
+                <img src="{{ asset('assets/img/tvl/tvl-white.png') }}" alt="thevineline" style="width: 64px"
                     class="med-star star-loader">
-                <img src="{{ asset('assets/img/tvl/tvl-white.png') }}" alt="" style="width: 64px"
+                <img src="{{ asset('assets/img/tvl/tvl-white.png') }}" alt="thevineline" style="width: 64px"
                     class="right-star star-loader">
             </div>
-            <img src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}" alt="" width="120"
+            <img src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}" alt="thevineline" width="120"
                 style="margin-top: 6rem" class="logo-loader">
         </div>
     </div>
@@ -36,7 +36,7 @@
 
                 @if (empty($banner_main))
                     <div class="vine-container-bg">
-                        <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="">
+                        <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="thevineline">
                         <div class="overlay"></div>
                     </div>
                     <div class="vine-container-content text-center">
@@ -46,7 +46,7 @@
                         <div class="col-12 d-flex flex-column align-items-center">
 
                             <img class="brand-name mb-4" src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}"
-                                alt="" width="150">
+                                alt="thevineline" width="150">
 
                             <h1 class="title-1"><span>S</span>ee the world, not your screen.</h1>
                             <a class="vine-btn" href="{{ route('catalog.all') }}" class="btn btn-primary">Comprar</a>
@@ -64,7 +64,7 @@
                     </div>
                 @else
                     <div class="vine-container-bg">
-                        <img src="{{ asset('img/banners/' . $banner_main->image) }}" alt="">
+                        <img src="{{ asset('img/banners/' . $banner_main->image) }}" alt="thevineline">
                         <div class="overlay"></div>
                     </div>
 
@@ -118,7 +118,7 @@
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <img src="{{ asset('themes/thevineline/img/video-vl1.jpg') }}" alt="">
+                                                <img src="{{ asset('themes/thevineline/img/video-vl1.jpg') }}" alt="thevineline">
                                             </div>
                                         </div>
                                     </div>
@@ -130,7 +130,7 @@
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <img src="{{ asset('themes/thevineline/img/video-vl2.jpg') }}" alt="">
+                                                <img src="{{ asset('themes/thevineline/img/video-vl2.jpg') }}" alt="thevineline">
                                             </div>
                                         </div>
                                     </div>
@@ -147,7 +147,7 @@
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <img src="{{ asset('themes/thevineline/img/video-vl3.jpg') }}" alt="">
+                                                <img src="{{ asset('themes/thevineline/img/video-vl3.jpg') }}" alt="thevineline">
                                             </div>
                                         </div>
                                     </div>
@@ -159,7 +159,7 @@
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <img src="{{ asset('themes/thevineline/img/video-vl4.jpg') }}" alt="">
+                                                <img src="{{ asset('themes/thevineline/img/video-vl4.jpg') }}" alt="thevineline">
                                             </div>
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@
                                 </div>
                                 <div class="slide-bg">
                                     <div class="overlay"></div>
-                                    <img src="{{ asset('themes/thevineline/img/video-vl1.jpg') }}" alt="">
+                                    <img src="{{ asset('themes/thevineline/img/video-vl1.jpg') }}" alt="thevineline">
                                 </div>
                             </div>
                         </div>
@@ -204,7 +204,7 @@
                                 </div>
                                 <div class="slide-bg">
                                     <div class="overlay"></div>
-                                    <img src="{{ asset('themes/thevineline/img/video-vl2.jpg') }}" alt="">
+                                    <img src="{{ asset('themes/thevineline/img/video-vl2.jpg') }}" alt="thevineline">
                                 </div>
                             </div>
                         </div>
@@ -242,7 +242,7 @@
         <div class="section-body">
             <div class="mission vine-container">
                 <div class="vine-container-bg js-parallax-in">
-                    <img src="{{ asset('themes/thevineline/img/mission.jpg') }}" alt="">
+                    <img src="{{ asset('themes/thevineline/img/mission.jpg') }}" alt="thevineline">
                 </div>
                 <div class="vine-container-content">
                     <div class="container-fluid">
@@ -256,7 +256,7 @@
                         <div class="mission-visual col-md-12">
                             <h5>We are here</h5>
                             <div class="mission-img js-parallax-in">
-                                <img src="{{ asset('themes/thevineline/img/mission-center.jpg') }}" alt="">
+                                <img src="{{ asset('themes/thevineline/img/mission-center.jpg') }}" alt="thevineline">
                             </div>
                             <h5>thanks to him</h5>
                         </div>
@@ -290,7 +290,7 @@
                                 <div class="product-wow">
 
                                     <img src="{{ asset('themes/thevineline/img/warm.webp') }}" class="img-fluid"
-                                        alt="">
+                                        alt="thevineline">
 
                                     @include('front.theme.werkn-backbone-bootstrap.layouts.utilities._product_card')
                                 </div>
@@ -320,9 +320,9 @@
                 <div class="vine-container">
                     <div class="vine-container-bg">
                         @if ($banner_promo->image == null)
-                            <img src="{{ asset('img/banners/' . $banner_promo->image_desktop) }}" alt="">
+                            <img src="{{ asset('img/banners/' . $banner_promo->image_desktop) }}" alt="thevineline">
                         @else
-                            <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="">
+                            <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="thevineline">
                         @endif
                     </div>
                     <div class="vine-container-content"></div>
@@ -396,7 +396,7 @@
                         @if ($banner->image == null)
                         @else
                             <img style="z-index: 1; position: relative;"
-                                src="{{ asset('img/banners/' . $banner->image) }}" alt="" class="main-img">
+                                src="{{ asset('img/banners/' . $banner->image) }}" alt="thevineline" class="main-img">
                         @endif
                     </div>
                 </div>

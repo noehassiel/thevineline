@@ -16,7 +16,7 @@
         display: block;
     }
 
-    .overlay-cookie h5 {
+    .overlay-cookie h4 {
         font-size: 1.1em;
     }
 
@@ -37,14 +37,18 @@
     @media (max-width: 760px) {
         .overlay-cookie {
             position: fixed;
-            width: 70%;
+            width: 95%;
             background: black;
             color: white;
             border: solid 1px grey;
             padding: 20px;
-            bottom: 0;
-            left: 0;
+            bottom: 8px;
+            left: 8px;
             z-index: 99;
+        }
+
+        .overlay-cookie p {
+            display:none;
         }
     }
 </style>
@@ -52,7 +56,7 @@
 <div id="cookie-notice" class="overlay-cookie show-cookie">
     <div class="fragment">
         <div>
-            <h5>Cookies</h5>
+            <h4>Cookies</h4>
             <p>Al hacer clic en “Aceptar”, aceptas el almacenamiento de cookies en tu dispositivo para mejorar la
                 navegación del sitio, analizar el uso del sitio y colaborar con nuestros esfuerzos de marketing.
                 Consulta nuestra Política de Privacidad para más información.</p>
