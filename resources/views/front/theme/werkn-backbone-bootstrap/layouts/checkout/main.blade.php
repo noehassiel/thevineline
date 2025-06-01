@@ -37,8 +37,6 @@
     @if (Auth::check())
         @include('front.theme.werkn-backbone-bootstrap.layouts.partials._werkn_bar')
     @endif
-
-    @include('front.theme.werkn-backbone-bootstrap.layouts.partials._headerbands')
     @include('front.theme.werkn-backbone-bootstrap.layouts.checkout.header')
 
     <main>

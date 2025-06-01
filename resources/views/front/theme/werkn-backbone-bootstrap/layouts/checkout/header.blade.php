@@ -26,6 +26,7 @@
 			</div>
 		</div>
 
+        {{--
 		<div class="col-4 d-flex justify-content-end res-hidden">
 			<div class="we-co--trust-logo">
 				<div class="d-flex align-items-center">
@@ -44,6 +45,7 @@
 				</div>
 	        </div>
 		</div>
+         --}}
 
 		<div class="col-12">
 			<hr>
