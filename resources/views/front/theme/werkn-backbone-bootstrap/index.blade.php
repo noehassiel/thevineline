@@ -191,7 +191,7 @@
                                 </div>
                                 <div class="slide-bg">
                                     <div class="overlay"></div>
-                                    <img src="{{ asset('themes/thevineline/img/video-vl2.jpg') }}" alt="thevineline">
+                                    <img src="{{ asset('themes/thevineline/img/video-vl1.jpg') }}" alt="thevineline">
                                 </div>
                             </div>
                         </div>
