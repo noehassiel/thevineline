@@ -111,9 +111,9 @@
                      --}}
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 mb-4 mb-md-0">
                 <div class="d-flex align-items-center justify-content-md-start justify-content-center">
-                    <a href="https://www.instagram.com/the.vineline/" class="btn btn-media">
+                    <a href="https://www.instagram.com/the.vineline/" class="btn btn-media" style="margin-right: 14px">
                         <ion-icon name="logo-instagram"></ion-icon>
                     </a>
                 </div>
