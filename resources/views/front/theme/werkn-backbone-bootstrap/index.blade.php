@@ -64,7 +64,7 @@
                     </div>
                 @else
                     <div class="vine-container-bg">
-                        <img src="{{ asset('img/banners/' . $banner_main->image) }}" alt="thevineline">
+                        <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="thevineline">
                         <div class="overlay"></div>
                     </div>
 
@@ -94,7 +94,7 @@
         <div class="section-body">
             <div class="vine-container">
                 <div class="vine-container-content">
-                    <h2><span>E</span>xpression <br> on your own terms</h2>
+                    <h2><span>L</span>o simple <br> puede ser eterno.</h2>
                 </div>
             </div>
         </div>
@@ -113,24 +113,26 @@
                                     <div class="card-slide">
                                         <div class="slide-content">
                                             <div class="slide-text">
-                                                <div>The spirit of street culture with high-quality craftsmanship</div>
+                                                <div>Calle con carácter. Tela con peso.</div>
                                                 <a href="">Comprar</a>
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <img src="{{ asset('themes/thevineline/img/video-vl1.jpg') }}" alt="thevineline">
+                                                <img src="{{ asset('themes/thevineline/img/video-vl1.jpg') }}"
+                                                    alt="thevineline">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card-slide">
                                         <div class="slide-content">
                                             <div class="slide-text white">
-                                                <div>The spirit of street culture with high-quality craftsmanship</div>
+                                                <div>No solo se siente, se vive.</div>
                                                 <a href="">Comprar</a>
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <img src="{{ asset('themes/thevineline/img/video-vl2.jpg') }}" alt="thevineline">
+                                                <img src="{{ asset('themes/thevineline/img/video-vl2.jpg') }}"
+                                                    alt="thevineline">
                                             </div>
                                         </div>
                                     </div>
@@ -142,24 +144,26 @@
                                     <div class="card-slide">
                                         <div class="slide-content">
                                             <div class="slide-text">
-                                                <div>The spirit of street culture with high-quality craftsmanship</div>
+                                                <div>Auténtico como tú.</div>
                                                 <a href="">Comprar</a>
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <img src="{{ asset('themes/thevineline/img/video-vl3.jpg') }}" alt="thevineline">
+                                                <img src="{{ asset('themes/thevineline/img/video-vl3.jpg') }}"
+                                                    alt="thevineline">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card-slide">
                                         <div class="slide-content">
                                             <div class="slide-text white">
-                                                <div>The spirit of street culture with high-quality craftsmanship</div>
+                                                <div>Expresión a tu manera.</div>
                                                 <a href="">Comprar</a>
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
-                                                <img src="{{ asset('themes/thevineline/img/video-vl4.jpg') }}" alt="thevineline">
+                                                <img src="{{ asset('themes/thevineline/img/video-vl4.jpg') }}"
+                                                    alt="thevineline">
                                             </div>
                                         </div>
                                     </div>
@@ -182,7 +186,7 @@
                         <div class="card-slide">
                             <div class="slide-content">
                                 <div class="slide-text">
-                                    <div>The spirit of street culture with high-quality craftsmanship</div>
+                                    <div>Calle con carácter. Tela con peso.</div>
                                     <a href="">Comprar</a>
                                 </div>
                                 <div class="slide-bg">
@@ -199,7 +203,7 @@
                         <div class="card-slide">
                             <div class="slide-content">
                                 <div class="slide-text white">
-                                    <div> The spirit of street culture with high-quality craftsmanship</div>
+                                    <div>No solo se siente, se vive.</div>
                                     <a href="">Comprar</a>
                                 </div>
                                 <div class="slide-bg">
@@ -222,9 +226,9 @@
                 <div class="vine-container-content">
 
                     <div class="d-flex justify-content-between align-items-center fav-heading">
-                        <h2><span>S</span>hop</h2>
+                        <h2><span>C</span>omprar</h2>
                         <a href="{{ route('catalog.all') }}" class="vine-btn">Comprar ahora</a>
-                        <h2><span>N</span>ow</h2>
+                        <h2><span>A</span>hora</h2>
                     </div>
 
                     <div class="d-flex justify-content-between flex-products">
@@ -248,21 +252,22 @@
                     <div class="container-fluid">
                         <div class="col-md-12 mission-manifesto">
                             <div class="blur-text blur-text--2" data-effect-2>
-                                The mental equipment of the average individual consists of a mass of judgments on most of
-                                the subjects which touch his daily physical or mental life.
+                                Diseñamos ropa con intención: piezas simples, honestas y llenas de significado.
+                                Cada prenda es una forma de expresión, una manera de llevar puesta una verdad más profunda.
+                                Porque cuando algo nace desde lo eterno, no necesita de excesos para tener impacto.
                             </div>
                         </div>
 
                         <div class="mission-visual col-md-12">
-                            <h5>We are here</h5>
+                            <h5>No es solo ropa</h5>
                             <div class="mission-img js-parallax-in">
                                 <img src="{{ asset('themes/thevineline/img/mission-center.jpg') }}" alt="thevineline">
                             </div>
-                            <h5>thanks to him</h5>
+                            <h5>es diseño con propósito</h5>
                         </div>
 
                         <div class="mission-bottom col-md-12 text-center">
-                            <h4>We are here</h4>
+                            <h4>calidad y dirección clara.</h4>
                         </div>
                     </div>
                 </div>
@@ -277,10 +282,10 @@
                 </div>
                 <div class="vine-container-content">
                     <div class="d-flex justify-content-between align-items-center mb-4 min-heading">
-                        <h1 class="mb-0"><span>C</span>atalog</h1>
+                        <h1 class="mb-0"><span>C</span>atálogo</h1>
 
                         <a href="" class="vine-btn">
-                            Go shop
+                            Ver más
                         </a>
                     </div>
 
