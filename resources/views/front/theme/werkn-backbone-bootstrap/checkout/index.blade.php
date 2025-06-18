@@ -215,7 +215,7 @@
 
                         $('.cp-error').text(
                             'Problema del servidor: Error 500. Contacta con nosotros para ayudarte.'
-                            );
+                        );
                         $('.cp-error').fadeIn();
 
                         setTimeout(function() {
@@ -411,7 +411,7 @@
         @if ($card_payment->supplier == 'OpenPay')
             <!-- OPEN PAY API -->
             <script type="text/javascript" src="https://js.openpay.mx/openpay.v1.min.js"></script>
-            <script type="text/javascript" src="https://js.openpay.mx/openpay-data.v1.min.js"></script>
+            <script type='text/javascript' src="https://js.openpay.mx/openpay-data.v1.min.js"></script>
 
             <script>
                 var $form = $('#checkout-form');
@@ -424,18 +424,16 @@
                     })
                     $('#btnBuy').on('click', function() {
                         if ($('input[name=method]').val() === 'Pago con Tarjeta') {
-                            OpenPay.setId('{{ $card_payment->merchant_id }}');
-                            OpenPay.setApiKey('{{ $card_payment->public_key }}');
-                            OpenPay.setSandboxMode('{{ env('OPENPAY_PRODUCTION_MODE', false) }}');
-
-                            var deviceSessionId = OpenPay.deviceData.setup('checkout-form', "device_hidden");
-                            //console.log(deviceSessionId);
-
+                            OpenPay.setId('mzvecyway8x63rnzk8sv');
+                            OpenPay.setApiKey('pk_c27cbbe0ebea4aa9a0bbd2a5b3fad64e');
+                            var deviceSessionId = OpenPay.deviceData.setup("checkout", "device_hidden");
+                            OpenPay.setSandboxMode(true);
                             // Pedirle al boton que se desactive al enviar el formulario para que no sea posible enviar varias veces el formulario.
                             $form.find('button').prop('disabled', true);
 
                             $('.loader-standby h2').text('Procesando tu tarjeta...');
                             $('.loader-standby').removeClass('loader-hidden');
+
 
                             OpenPay.token.create({
                                 "card_number": $('#card-number').val().replace(/\s+/g, ''),
@@ -454,6 +452,7 @@
                             $form.find('button').prop('disabled', true);
 
                             $form.append($('<input type="hidden" name="openPayToken" />').val(response.data.id));
+                            $form.append($('<input type="hidden" name="device_hidden" />').val(deviceSessionId));
 
                             $form.get(0).submit()
                         }

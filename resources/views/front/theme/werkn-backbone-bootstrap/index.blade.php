@@ -34,58 +34,32 @@
         <div class="section-body">
             <div class="hero vine-container">
 
-                @if (empty($banner_main))
-                    <div class="vine-container-bg">
-                        <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="thevineline">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="vine-container-content text-center">
 
-                        <div></div>
+                <div class="vine-container-bg">
+                    <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="thevineline">
+                    <div class="overlay"></div>
+                </div>
+                <div class="vine-container-content text-center">
 
-                        <div class="col-12 d-flex flex-column align-items-center">
+                    <div></div>
 
-                            <img class="brand-name mb-4" src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}"
-                                alt="thevineline" width="150">
+                    <div class="col-12 d-flex flex-column align-items-center">
 
-                            <h1 class="title-1"><span>S</span>ee the world, not your screen.</h1>
-                            <a class="vine-btn" href="{{ route('catalog.all') }}" class="btn btn-primary">Comprar</a>
-                        </div>
+                        <img class="brand-name mb-4" src="{{ asset('assets/img/tvl/tvl-logo-white.png') }}"
+                            alt="thevineline" width="150">
 
-
-                        <div class="col-md-8">
-                            <h2 class="hero-subtitle">Ai Pin is your intelligent, voice-powered wearable companion — keeping
-                                you
-                                connected and in
-                                the
-                                moment with just a touch.
-                            </h2>
-                        </div>
-                    </div>
-                @else
-                    <div class="vine-container-bg">
-                        <img src="{{ asset('themes/thevineline/img/hero.jpg') }}" alt="thevineline">
-                        <div class="overlay"></div>
+                        <h1 class="title-1"><span>N</span>ueva colección:</h1>
+                        <h1 class="title-2">Aliento de vida.</h1>
+                        <a class="vine-btn" href="{{ route('catalog.all') }}" class="btn btn-primary">Comprar</a>
                     </div>
 
-                    <div class="vine-container-content text-center">
-                        <div></div>
 
-                        <div class="col-12">
-                            <h3 class="brand-name">The Vineline</h3>
-                            <h1 class="title-1">{{ $banner_main->title }}</h1>
-
-                            <a class="hero-btn" href="{{ $banner_main->link }}"
-                                class="btn btn-primary">{{ $banner_main->text_button }}</a>
-                        </div>
-
-
-                        <div class="col-md-8">
-                            <h2 class="hero-subtitle">{{ $banner_main->subtitle }}
-                            </h2>
-                        </div>
+                    <div class="col-md-8">
+                        <h2 class="hero-subtitle">El aire como símbolo de vida. Inspirado en lo invisible pero esencial:
+                            El aliento y la respiración consciente.
+                        </h2>
                     </div>
-                @endif
+                </div>
             </div>
         </div>
     </section>

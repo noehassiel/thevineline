@@ -8,7 +8,7 @@
 
             @foreach ($products as $product)
                 @php
-                    $item_img = $product['item']['images']->first()->image;
+                    $item_img = $product['item']['images']->first()->image ?? '';
                     $variant = $product['variant'];
                 @endphp
                 <!--List product -->
