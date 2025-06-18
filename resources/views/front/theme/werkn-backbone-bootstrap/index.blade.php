@@ -191,7 +191,7 @@
                                 </div>
                                 <div class="slide-bg">
                                     <div class="overlay"></div>
-                                    <img src="{{ asset('themes/thevineline/img/video-vl1.jpg') }}" alt="thevineline">
+                                    <img src="{{ asset('themes/thevineline/img/video-vl2.jpg') }}" alt="thevineline">
                                 </div>
                             </div>
                         </div>
@@ -364,7 +364,7 @@
 
 
 
-
+    {{--
     <section class="banner-main" style="background:#f9f8f5;">
         @if (empty($banners))
             <h2 class="text-center p-5">No se ha configurado un banner</h2>
@@ -408,7 +408,7 @@
             @endforeach
         @endif
     </section>
-
+ --}}
     {{--
     @if (Session::has('watch_history'))
         <section class="vine-section watch-history">
