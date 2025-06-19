@@ -84,6 +84,10 @@
         .btn-link {
             padding: 0px 4px !important;
         }
+
+        .purchase-complete {
+            margin: 14vh 0;
+        }
     </style>
     <main class="purchase-complete">
         <div class="container text-purchase">
