@@ -88,7 +88,7 @@
                                         <div class="slide-content">
                                             <div class="slide-text">
                                                 <div>Calle con carácter. Tela con peso.</div>
-                                                <a href="">Comprar</a>
+                                                <a href="{{ route('catalog.all') }}">Comprar</a>
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
@@ -101,7 +101,7 @@
                                         <div class="slide-content">
                                             <div class="slide-text white">
                                                 <div>No solo se siente, se vive.</div>
-                                                <a href="">Comprar</a>
+                                                <a href="{{ route('catalog.all') }}">Comprar</a>
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
@@ -119,7 +119,7 @@
                                         <div class="slide-content">
                                             <div class="slide-text">
                                                 <div>Auténtico como tú.</div>
-                                                <a href="">Comprar</a>
+                                                <a href="{{ route('catalog.all') }}">Comprar</a>
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
@@ -132,7 +132,7 @@
                                         <div class="slide-content">
                                             <div class="slide-text white">
                                                 <div>Expresión a tu manera.</div>
-                                                <a href="">Comprar</a>
+                                                <a href="{{ route('catalog.all') }}">Comprar</a>
                                             </div>
                                             <div class="slide-bg">
                                                 <div class="overlay"></div>
@@ -161,7 +161,7 @@
                             <div class="slide-content">
                                 <div class="slide-text">
                                     <div>Calle con carácter. Tela con peso.</div>
-                                    <a href="">Comprar</a>
+                                    <a href="{{ route('catalog.all') }}">Comprar</a>
                                 </div>
                                 <div class="slide-bg">
                                     <div class="overlay"></div>
@@ -178,7 +178,7 @@
                             <div class="slide-content">
                                 <div class="slide-text white">
                                     <div>No solo se siente, se vive.</div>
-                                    <a href="">Comprar</a>
+                                    <a href="{{ route('catalog.all') }}">Comprar</a>
                                 </div>
                                 <div class="slide-bg">
                                     <div class="overlay"></div>
