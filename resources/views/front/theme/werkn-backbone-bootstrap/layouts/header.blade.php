@@ -133,7 +133,7 @@
 </header>
 
 
-<div class="collapse-nav">
+<div class="collapse-nav" style="overflow: hidden">
     <div class="d-flex w-100 justify-content-end p-2">
         <a href="javascript:void(0)" id="byeCollapse"
             class="justify-content-between d-flex align-items-center text-white">
@@ -148,27 +148,29 @@
         @endforeach
     </div>
 
-    <div class="p-3">
-        @foreach ($main_categories as $category)
-            <div class="col-md-4">
-                <div class="cat-item mb-20">
-                    <a href="{{ route('catalog', $category->slug) }}" class="thumb">
-                        <div class="image">
-                            @if ($category->image == null)
-                                <img src="{{ asset('img/categories/no_category.jpg') }}" alt="" width="100%">
-                            @else
-                                <img src="{{ asset('img/categories/' . $category->image) }}" alt=""
-                                    width="100%">
-                            @endif
-                        </div>
-                        <div class="content mt-3">
-                            <h3 class="mb-3 mt-0">{{ $category->name }}</h3>
-                        </div>
-                    </a>
+    <div class="p-3" style="overflow: scroll">
+        <div class="row">
+            @foreach ($main_categories as $category)
+                <div class="col-6">
+                    <div class="cat-item mb-20">
+                        <a href="{{ route('catalog', $category->slug) }}" class="thumb">
+                            <div class="image">
+                                @if ($category->image == null)
+                                    <img src="{{ asset('img/categories/no_category.jpg') }}" alt=""
+                                        width="100%">
+                                @else
+                                    <img src="{{ asset('img/categories/' . $category->image) }}" alt=""
+                                        width="100%">
+                                @endif
+                            </div>
+                            <div class="content mt-3">
+                                <h3 class="mb-3 mt-0">{{ $category->name }}</h3>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        @endforeach
-
+            @endforeach
+        </div>
     </div>
 </div>
 
@@ -425,12 +427,17 @@
             $('header').addClass('bye');
 
             $('.filters').toggle('off');
+
+            document.body.classList.add('lock-scroll');
+
         });
 
         $('#byeCollapse').on("click", function() {
             $('.collapse-nav').removeClass('active');
             $('header').removeClass('bye');
             $('.filters').toggle('off');
+
+            document.body.classList.remove('lock-scroll');
         });
 
 
