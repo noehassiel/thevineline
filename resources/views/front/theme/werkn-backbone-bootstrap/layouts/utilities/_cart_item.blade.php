@@ -13,10 +13,17 @@
             $variant = $cart_product['variant'];
         @endphp
 
+        @php
+            $first_image = \Nowyouwerkn\WeCommerce\Models\ProductImage::where(
+                'product_id',
+                $cart_product['id'],
+            )->first();
+        @endphp
+
         <div class="cart-item-media d-flex mb-3">
             <div class="flex-shrink-0">
                 <img alt="{{ $cart_product['item']['name'] }}" style="width: 48px;"
-                    src="{{ asset('img/products/' . $item_img) }}">
+                    src="{{ asset('img/products/' . $first_image->image) }}">
             </div>
 
             <div class="flex-grow-1 ms-3 flex-column">
