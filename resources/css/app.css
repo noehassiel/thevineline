@@ -10,28 +10,28 @@
 
 @font-face {
     font-family: 'uqr';
-    src: url('/fonts/u-q_r.otf');
+    src: url('../fonts/u-q_r.otf');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'pqf';
-    src: url('/fonts/p-q_f.woff2');
+    src: url('../fonts/p-q_f.woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'nhm';
-    src: url('/fonts/n-h_m.woff2');
+    src: url('../fonts/n-h_m.woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'nhr';
-    src: url('/fonts/n-h_r.woff2');
+    src: url('../fonts/n-h_r.woff2');
     font-weight: normal;
     font-style: normal;
 }
