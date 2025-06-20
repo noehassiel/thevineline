@@ -11,11 +11,18 @@
                     $item_img = $product['item']['image'] ?? '';
                     $variant = $product['variant'];
                 @endphp
+
+                @php
+                    $first_image = \Nowyouwerkn\WeCommerce\Models\ProductImage::where(
+                        'product_id',
+                        $product['item']['id'],
+                    )->first();
+                @endphp
                 <!--List product -->
                 <div class="we-co--product-list-item d-flex align-items-center">
                     <div class="we-co--product-img-wrap" style="width: 15%">
                         <span class="we-co--qty-circle">{{ $product['qty'] }}</span>
-                        <img src="{{ asset('img/products/' . $item_img) }}" class="img-fluid"
+                        <img src="{{ asset('img/products/' . $first_image->image) }}" class="img-fluid"
                             alt="{{ $product['item']['name'] }}">
                     </div>
 
