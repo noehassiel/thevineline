@@ -34,13 +34,13 @@
                             @foreach ($products as $cart_product)
                                 <li>
                                     @php
-                                        $item_img = $cart_product['item']['images']->first()->image;
+                                        $item_img = $cart_product['item']['image'];
                                         $variant = $cart_product['variant'];
                                     @endphp
 
                                     <div class="cart-item-media d-flex mb-3">
                                         <div class="flex-shrink-0">
-                                            <img alt="{{ $cart_product['item']['name'] }}" style="width: 100px;"
+                                            <img alt="{{ $cart_product['item']['name'] }}" style="width: 54px;"
                                                 src="{{ asset('img/products/' . $item_img) }}">
                                         </div>
 

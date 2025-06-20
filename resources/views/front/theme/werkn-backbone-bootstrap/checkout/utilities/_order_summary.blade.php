@@ -8,12 +8,12 @@
 
             @foreach ($products as $product)
                 @php
-                    $item_img = $product['item']['images']->first()->image ?? '';
+                    $item_img = $product['item']['image'] ?? '';
                     $variant = $product['variant'];
                 @endphp
                 <!--List product -->
                 <div class="we-co--product-list-item d-flex align-items-center">
-                    <div class="we-co--product-img-wrap w-25">
+                    <div class="we-co--product-img-wrap" style="width: 15%">
                         <span class="we-co--qty-circle">{{ $product['qty'] }}</span>
                         <img src="{{ asset('img/products/' . $item_img) }}" class="img-fluid"
                             alt="{{ $product['item']['name'] }}">

@@ -28,7 +28,7 @@
             <div class="col-md-6 mb-md-0 mb-4 d-flex justify-content-center">
                 <img src="{{ asset('assets/img/tvl/logo.svg') }}" alt="" style="width: 80%">
             </div>
-            <div class="col-md-3 col-6">
+            <div class="col-md-2 col-6">
                 <ul class="list-unstyled">
                     <li class="mb-3"><strong>Tienda</strong></li>
                     <li>
@@ -50,7 +50,38 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="col-md-3 col-6">
+
+            <div class="col-md-2 col-12">
+                <ul class="list-unstyled">
+                    <li class="mb-3"><strong>Contacto</strong></li>
+                    <li>
+                        <p class="footer-link mb-0">
+                            Correo:
+                        </p>
+                        <a class="footer-link" style="font-size: 14px" href="mailto:attention.thevineline@gmail.com">
+                            attention.thevineline@gmail.com
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <p class="footer-link mb-0">
+                            Teléfono:
+                        </p>
+                        <a class="footer-link" style="font-size: 14px" href="tel=+522227282069">
+                            +522227282069
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <p class="footer-link mb-0">
+                            Dirección:
+                        </p>
+                        <a class="footer-link" style="font-size: 14px" href="https://maps.app.goo.gl/9aSoJd3tbgPdkYF3A">
+                            Av. Juárez 2309, La Paz, 72410 Heroica Puebla de Zaragoza, Pue.
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-6">
                 <ul class="list-unstyled">
                     <li class="mb-3"><strong>Soporte y Ayuda</strong></li>
                     @foreach ($legals as $legal)

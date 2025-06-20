@@ -645,6 +645,11 @@
                                                         class="card-body">
 
                                                         @php
+                                                            $first_image = \Nowyouwerkn\WeCommerce\Models\ProductImage::where(
+                                                                'product_id',
+                                                                $rec_products->id,
+                                                            )->first();
+
                                                             $second_image = \Nowyouwerkn\WeCommerce\Models\ProductImage::where(
                                                                 'product_id',
                                                                 $rec_products->id,
@@ -654,7 +659,7 @@
                                                         @endphp
 
                                                         <img class="card-img-top @if ($second_image != null) second-image @endif"
-                                                            src="{{ asset('img/products/' . $rec_products->image) }}"
+                                                            src="{{ asset('img/products/' . $first_image->image) }}"
                                                             data-holder-rendered="true">
 
                                                         @if ($second_image != null)
