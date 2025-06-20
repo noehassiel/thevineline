@@ -108,10 +108,6 @@
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn px-0 w-100 text-start footer-link text-white"
                                     data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Consejos de cuidado
-                                </button>
-                                <button type="button" class="btn px-0 w-100 text-start footer-link text-white"
-                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Materiales
                                 </button>
                             </div>
@@ -150,9 +146,11 @@
                                         <div class="product-details-info mt-4">
                                             <!-- Variantes Principales -->
                                             @if ($product->variants->count() != 0)
-                                                <span class="text-warning">Existencias
-                                                    totales: {{ $product->stock }} <ion-icon
-                                                        name="alert-circle-outline"></ion-icon></span>
+
+                                                @if ($product->stock <= 5)
+                                                    <span class="text-warning mb-2">Pocas en existencia<ion-icon
+                                                            name="alert-circle-outline"></ion-icon></span>
+                                                @endif
 
                                                 <ul class="wk-variant-list d-flex list-unstyled">
                                                     @foreach ($product->variants as $variant)
@@ -710,27 +708,15 @@
                         <div class="tab-content">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
-                                        aria-selected="true">Consejos de cuidado</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="materials-tab" data-bs-toggle="tab"
+                                    <button class="nav-link active" id="materials-tab" data-bs-toggle="tab"
                                         data-bs-target="#materials" type="button" role="tab" aria-controls="materials"
                                         aria-selected="false">Materiales</button>
                                 </li>
                             </ul>
 
                             <div class="tab-content mt-4" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                    aria-labelledby="home-tab">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p>{{ $product->description }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="materials" role="tabpanel" aria-labelledby="materials-tab">
+                                <div class="tab-pane fade show active" id="materials" role="tabpanel"
+                                    aria-labelledby="materials-tab">
                                     <p>{{ $product->materials }}</p>
                                 </div>
                             </div>

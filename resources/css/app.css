@@ -1106,6 +1106,11 @@ nav .nav-link {
     padding: 0;
 }
 
+.stock-variant {
+    border-color: white;
+    color: white;
+}
+
 /*MARQUEE*/
 
 .wrapper {
