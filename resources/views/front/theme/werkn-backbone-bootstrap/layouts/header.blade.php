@@ -74,11 +74,16 @@
                         id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Bolsa
 
-                        <ion-icon name="bag-outline"></ion-icon>
-                        {{--
-                        <span
-                            class="badge bg-danger">{{ Session::has('cart') ? Session::get('cart')->totalQty : '0' }}</span>
-                             --}}
+                        <div class="position-relative">
+                            <ion-icon name="bag-outline"></ion-icon>
+
+                            @if (Session::has('cart'))
+                                <div class="spinner-grow spinner-grow-sm position-absolute text-primary" role="status"
+                                    style="top: 1px; left:-4px; width: 8px; height: 8px;">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            @endif
+                        </div>
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"
