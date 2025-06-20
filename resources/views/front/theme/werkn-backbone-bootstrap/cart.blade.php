@@ -41,7 +41,7 @@
                                     @php
                                         $first_image = \Nowyouwerkn\WeCommerce\Models\ProductImage::where(
                                             'product_id',
-                                            $cart_product['id'],
+                                            $cart_product['item']['id'],
                                         )->first();
                                     @endphp
 
