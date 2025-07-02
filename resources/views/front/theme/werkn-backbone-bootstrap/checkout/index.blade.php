@@ -425,9 +425,9 @@
                     $('#btnBuy').on('click', function() {
                         if ($('input[name=method]').val() === 'Pago con Tarjeta') {
                             OpenPay.setId('mzvecyway8x63rnzk8sv');
-                            OpenPay.setApiKey('pk_c27cbbe0ebea4aa9a0bbd2a5b3fad64e');
+                            OpenPay.setApiKey('pk_e85d289018f34b76aef846b7d24d6500');
                             var deviceSessionId = OpenPay.deviceData.setup("checkout", "device_hidden");
-                            OpenPay.setSandboxMode(true);
+                            OpenPay.setSandboxMode(false);
                             // Pedirle al boton que se desactive al enviar el formulario para que no sea posible enviar varias veces el formulario.
                             $form.find('button').prop('disabled', true);
 
