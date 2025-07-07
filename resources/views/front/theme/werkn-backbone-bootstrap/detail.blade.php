@@ -153,7 +153,7 @@
                                                 @endif
 
                                                 <ul class="wk-variant-list d-flex list-unstyled">
-                                                    @foreach ($product->variants as $variant)
+                                                    @foreach ($product->variants->sortBy('id') as $variant)
                                                         <li>
                                                             @if ($variant->pivot->stock <= 0)
                                                                 <div class="no-stock-variant"><span
@@ -269,7 +269,7 @@
                                     <div class="product-details">
                                         <div class="row h-100">
                                             <div class="col-md-4 py-2">
-                                                <p>{{ $product->description }}</p>
+                                                <p>{{ $product->materials }}</p>
                                             </div>
 
                                             @php
