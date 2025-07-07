@@ -81,10 +81,10 @@
                 <div class="col-md-2 p-md-2 p-4">
                     <div class="d-flex flex-column justify-content-between h-100">
                         <div>
-                            <small style="font-size:.75vw">New</small>
+                            <small style="font-size:12px">New</small>
 
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <p class="mb-0" style="font-size: 12px">{{ $product->name }}</p>
+                                <p class="mb-0" style="font-size: 14px">{{ $product->name }}</p>
 
 
                                 @if (isset(Auth::user()->id) && Auth::user()->isInWishlist($product->id))
@@ -103,11 +103,11 @@
                                     @endif
                                 </div>
 
-                                <p class="my-3" style="font-size: 12px">{{ $product->description }}</p>
+                                <p class="my-3" style="font-size: 14px">{{ $product->description }}</p>
 
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn px-0 w-100 text-start footer-link text-white"
-                                    data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size: 12px">
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size: 14px">
                                     Materiales
                                 </button>
                             </div>
