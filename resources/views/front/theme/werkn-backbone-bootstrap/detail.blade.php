@@ -182,8 +182,8 @@
                                             </div>
                                         @else
                                             <a href="#" id="addToCartBtn"
-                                                class="btn btn-primary d-flex align-items-center w-100 justify-content-between pt-md-4 text-white"
-                                                role="button">
+                                                class="btn btn-primary d-flex align-items-center w-100 justify-content-between text-white"
+                                                role="button" style="font-size: .85vw !important; margin-top:1.5vh">
                                                 <div id="size-alert" class="size-alert">Selecciona una talla.</div>
                                                 Agregar a carrito
                                                 <ion-icon name="bag-add-outline" class="me-2"></ion-icon>
