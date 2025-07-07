@@ -78,13 +78,13 @@
 
         <div class="container-fluid h-100">
             <div class="row h-100">
-                <div class="col-md-2 p-4">
+                <div class="col-md-2 p-md-2 p-4">
                     <div class="d-flex flex-column justify-content-between h-100">
                         <div>
                             <small style="font-size:.75vw">New</small>
 
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <p class="mb-0" style="font-size: .83vw">{{ $product->name }}</p>
+                                <p class="mb-0" style="font-size: 12px">{{ $product->name }}</p>
 
 
                                 @if (isset(Auth::user()->id) && Auth::user()->isInWishlist($product->id))
@@ -103,11 +103,11 @@
                                     @endif
                                 </div>
 
-                                <p class="my-3" style="font-size: .83vw">{{ $product->description }}</p>
+                                <p class="my-3" style="font-size: 12px">{{ $product->description }}</p>
 
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn px-0 w-100 text-start footer-link text-white"
-                                    data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size: .83vw">
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size: 12px">
                                     Materiales
                                 </button>
                             </div>
@@ -183,7 +183,7 @@
                                         @else
                                             <a href="#" id="addToCartBtn"
                                                 class="btn btn-primary d-flex align-items-center w-100 justify-content-between text-white"
-                                                role="button" style="font-size: .85vw !important; margin-top:1.5vh">
+                                                role="button" style="font-size: 12px !important; margin-top:1.5vh">
                                                 <div id="size-alert" class="size-alert">Selecciona una talla.</div>
                                                 Agregar a carrito
                                                 <ion-icon name="bag-add-outline" class="me-2"></ion-icon>
@@ -203,7 +203,7 @@
                                             <a href="{{ route('add-cart', ['id' => $product->id, 'variant' => 'unique']) }}"
                                                 id="addToCartBtn"
                                                 class="btn btn-primary d-flex align-items-center w-100 justify-content-between text-white"
-                                                role="button" style="font-size: .85vw !important; margin-top:1.5vh">
+                                                role="button" style="font-size: 12px !important; margin-top:1.5vh">
                                                 Agregar a carrito
                                                 <ion-icon name="bag-add-outline" class="me-2"></ion-icon>
                                             </a>
