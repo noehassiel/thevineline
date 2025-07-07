@@ -161,6 +161,7 @@
                                                             @else
                                                                 <a id="variant{{ $variant->id }}"
                                                                     data-value="{{ $variant->value }}" class="stock-variant"
+                                                                    style="font-size:14px"
                                                                     href="javascript:void(0)">{{ $variant->value }}</a>
                                                             @endif
                                                         </li>
