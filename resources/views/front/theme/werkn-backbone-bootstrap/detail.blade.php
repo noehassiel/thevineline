@@ -81,10 +81,10 @@
                 <div class="col-md-2 p-4">
                     <div class="d-flex flex-column justify-content-between h-100">
                         <div>
-                            <small>New</small>
+                            <small style="font-size:.75vw">New</small>
 
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <p class="mb-0">{{ $product->name }}</p>
+                                <p class="mb-0" style="font-size: .83vw">{{ $product->name }}</p>
 
 
                                 @if (isset(Auth::user()->id) && Auth::user()->isInWishlist($product->id))
@@ -103,11 +103,11 @@
                                     @endif
                                 </div>
 
-                                <p class="my-3">{{ $product->description }}</p>
+                                <p class="my-3" style="font-size: .83vw">{{ $product->description }}</p>
 
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn px-0 w-100 text-start footer-link text-white"
-                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size: .83vw">
                                     Materiales
                                 </button>
                             </div>
@@ -202,8 +202,8 @@
                                         @else
                                             <a href="{{ route('add-cart', ['id' => $product->id, 'variant' => 'unique']) }}"
                                                 id="addToCartBtn"
-                                                class="btn btn-primary d-flex align-items-center w-100 justify-content-between pt-md-4 text-white"
-                                                role="button">
+                                                class="btn btn-primary d-flex align-items-center w-100 justify-content-between text-white"
+                                                role="button" style="font-size: .85vw !important; margin-top:1.5vh">
                                                 Agregar a carrito
                                                 <ion-icon name="bag-add-outline" class="me-2"></ion-icon>
                                             </a>

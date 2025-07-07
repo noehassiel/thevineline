@@ -982,6 +982,14 @@ nav .nav-link {
     }
 }
 
+.stock-variant{
+    line-height: inherit;
+    width: inherit;
+    height: inherit;
+    font-size: .75vw;
+    padding: 4px 6px;
+}
+
 .vine-product .col-md-10 .thumbs-min {
     background-color: rgba(78, 78, 78, 0.829);
     padding: 6px;
